@@ -1,0 +1,25 @@
+@import "~normalize.css";
+@import "fonts.scss";
+@import "./header.scss";
+
+$font-size: 2rem;
+$font-color: red;
+
+html {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $font-size;
+  color: $font-color;
+  width: 100vw;
+}
+
+
+
+/*
+@media screen and (max-width: 600px) {
+  .header {
+    max-width: 100%;
+    padding-bottom: 28px;
+  }
+}*/

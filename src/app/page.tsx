@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import SimpleSlider from "../components/slider1/slider.tsx";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+
       <main className={styles.main}>
+        <SimpleSlider />
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -61,6 +63,5 @@ export default function Home() {
           </a>
         </div>
       </main>
-    </div>
   );
 }

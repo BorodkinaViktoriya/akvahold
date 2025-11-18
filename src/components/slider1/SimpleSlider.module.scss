@@ -1,0 +1,109 @@
+.slider {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+  height: 400px; // подгони под макет
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // базовое выравнивание, остальное через absolute
+}
+
+/* Верхние кнопки-переключатели по центру */
+.topNav {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 8px;
+}
+
+.topNavButton {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.topNavButton_active {
+  background: #fff;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+/* Название вверху по центру внутри слайда */
+.title {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Описание внизу по центру */
+.description {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  sans-serif;
+  font-weight: 500;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 70%;
+  margin: 0;
+
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Стрелки снизу */
+.arrows {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.arrowButton {
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.arrowButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}

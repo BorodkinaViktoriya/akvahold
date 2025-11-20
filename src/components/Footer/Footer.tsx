@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
                 <section className={styles.block}>
                     <h2 className={styles.blockTitle}>О компании</h2>
                     <p className={styles.text}>
-                        Бренд X — премиальные кожаные изделия ручной работы. Работаем с
+                        Бренд Good Line— премиальные кожаные изделия ручной работы. Работаем с
                         2015 года, используем только отборные материалы и продуманную
                         фурнитуру.
                     </p>

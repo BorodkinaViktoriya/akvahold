@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
         <header className={styles.header}>
             <div className={styles.container}>
                 <a href="/" className={styles.logo} aria-label="На главную Бренд X">
-                    <img src="/images/img.png" alt="Бренд X" />
+                    <img src="/images/logo.png" alt="Бренд X" />
                 </a>
 
                 <nav className={styles.nav} aria-label="Основная навигация">

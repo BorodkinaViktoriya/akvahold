@@ -25,28 +25,31 @@ export default function SimpleSlider() {
             <div
     className={styles.slide}
     style={{ backgroundImage: `url(${currentSlide.image})` }}
->
+>console.log('currentSlide.image:', currentSlide.image);
     {/* Верхние кнопки переключения по центру */}
-    <div className={styles.leftNav}> {/*TODO top nav refactor lefta nav*/}
+    <div className={styles.leftNav}>
         {slides.map((slide, index) => (
                 <button
                     key={slide.id}
             type="button"
             onClick={() => goTo(index)}
-    className={`${styles.topNavButton} ${
-        index === activeIndex ? styles.topNavButton_active : ""
+    className={`${styles.leftNavButton} ${
+        index === activeIndex ? styles.leftNavButton_active : ""
     }`}
     aria-label={`Показать слайд ${index + 1}`}
     aria-current={index === activeIndex}
 >
-    {slide.title}
+                  <span className={styles.top}>{slide.title}</span>
+                  <span className={styles.bottom}>{slide.subtitle}</span>
     </button>
 ))}
     </div>
 
     {/* Название сверху по центру (внутри слайда) */}
-    <h2 className={styles.title}>{currentSlide.title}</h2>
-
+              <div className={styles.container}>
+    <h2 className={styles.maintitle}>{currentSlide.title}</h2>
+              <p className={styles.subtitle}>{currentSlide.subtitle}</p>
+                </div >
     {/* Описание снизу по центру */}
     <p className={styles.description}>{currentSlide.description}</p>
 
@@ -58,7 +61,7 @@ export default function SimpleSlider() {
     className={styles.arrowButton}
     aria-label="Предыдущий слайд"
         >
-            ←
+      ⟵
           </button>
           <button
     type="button"
@@ -66,7 +69,7 @@ export default function SimpleSlider() {
     className={styles.arrowButton}
     aria-label="Следующий слайд"
         >
-            →
+            ⟶
           </button>
           </div>
           </div>

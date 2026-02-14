@@ -1,0 +1,30 @@
+.balloon {
+  max-width: 220px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat", sans-serif;
+  color: #232323;
+
+  img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  h3 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+
+  b {
+    font-weight: 600;
+  }
+}

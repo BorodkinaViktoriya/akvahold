@@ -1,0 +1,14 @@
+/* Base colors */
+$background-light: #cdc5bf;
+$background-dark: #cdc5bf;
+$button-color: #024e6b;
+$white: #fff;
+$text-dark: #232323;
+
+:root {
+  --background-light: #{$background-light};
+  --background-dark: #{$background-dark};
+  --button-color: #{$button-color};
+  --white: #{$white};
+  --color-text-dark: #{$text-dark};
+}

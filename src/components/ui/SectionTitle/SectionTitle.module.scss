@@ -1,0 +1,23 @@
+.section__wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: clamp(70px, 5.2vw, 100px);
+  padding-bottom: clamp(30px, 3.125vw, 60px);
+}
+
+.section__wrapper_dark {
+  background-color: #5B5048;
+  color: white;
+}
+.section__title {
+  text-align: center;
+ /* font-size: clamp(24px, 2.25vw + 16.8px, 60px) *//*clamp(1.5rem, 3.3vw, 3.75rem);*/ //TODO удалить лишнее если устраивает
+}
+
+.section__title span {
+  display: block;
+  font-weight: 600;
+}
+
+

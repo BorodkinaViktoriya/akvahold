@@ -2,12 +2,20 @@
 import React from "react";
 import styles from "./Header.module.scss";
 
+/*<nav> СЕМАНТИЧНАЯ НАВИГАЦИЯ
+  <ul>
+    <li><a href="/about">О нас</a></li>
+    <li><a href="/blog">Блог</a></li>
+    <li><a href="/contact">Контакты</a></li>
+  </ul>
+</nav>*/   //TODO передклать с nav
+
 export const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.container}>
-                <a href="/" className={styles.logo} aria-label="На главную Бренд X">
-                    <img src="/images/logo.png" alt="Бренд X" />
+                <a href="/" className={styles.logo} aria-label="На главную Good Line">
+                    <img src="/images/logo.png" alt="Good Line" />
                 </a>
 
                 <nav className={styles.nav} aria-label="Основная навигация">

@@ -1,0 +1,254 @@
+.slider {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+  position: relative;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  padding-left: 4vw; //TODO сверить паддинги с остальными блоками
+  display: grid;
+  grid-template-columns: 27% 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  grid-template-areas:
+    "arrows image"
+    "title image"
+    "description image"
+    "nav image";
+  gap:  0 4vw;
+  color: var(--color-text-dark);
+}
+
+.image_container {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imageFade {
+  object-fit: cover;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+
+/* Стрелки слева вверху*/
+.arrows {
+  grid-area: arrows;
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 2.3vw;
+}
+
+.arrowButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 65px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.arrowButton:hover {
+  opacity: 0.6;
+}
+
+.arrowButton_right img {
+  transform: scaleX(-1);
+}
+
+.title {
+  grid-area: title;
+  font-weight: 600;
+  margin-bottom: 1.5vw;
+}
+
+.subtitle {
+  display: block;
+  font-weight: 400;
+}
+
+/* Описание  */
+.description {
+  grid-area: description;
+  font-size: 1rem;
+  margin-bottom: 2vw;
+  min-height: 200px;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Левые кнопки-переключатели */
+.navigation {
+  grid-area: nav;
+ /* justify-self: start;*/
+  margin-top: auto;
+  font-size: 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 2.3vw;
+  transition: all 0.4s ease;
+}
+
+.navigationButton {
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  padding: 10px 20px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition:
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s ease;
+
+}
+.navigationButton::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-text-dark);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Анимируем только ширину */
+  opacity: 1;
+}
+
+
+.navigationButton_active .bottom {
+    font-weight: 700;
+}
+
+.navigationButton_active::before {
+  width: 4px;
+  opacity: 1;
+}
+
+.top {
+  font-weight: 700;
+}
+
+@media (max-width: 1300px) {
+
+  .slide {
+    padding-left: 20px;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: auto;
+    /*gap: 20px;*/
+  }
+
+  .description {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .navigationButton {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 1020px) {
+  .slider {
+    min-height: min-content;
+  }
+  .slide {
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto clamp(80px, calc(200px - 0.1714 * 100vw), 200px) auto;
+    /*grid-template-rows: auto auto clamp(85px, -10.03vw + 187.3px, 120px)  auto;*/
+    grid-template-areas:
+    "nav"
+    "image"
+    "description "
+    "arrows";
+    gap: 15px;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    padding-bottom: 2.3vw;
+  }
+  .arrows{
+     justify-self: center;
+    margin-bottom: 0;
+  }
+  .title {
+    display: none;
+  }
+
+  .description {
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 0px;
+    min-height: auto;
+  }
+
+  .navigation {
+    grid-area: nav;
+    margin: 0;
+    scroll-padding-left: 20px;
+    scroll-behavior: smooth;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 100%;
+    /*margin-bottom: 2.3vw;*/
+    scrollbar-width: none;
+    padding: 0 10px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .navigation::-webkit-scrollbar {
+    display: none; /* Скрываем полосу прокрутки в Chrome/Safari */
+  }
+
+
+ .navigationButton::before {
+    bottom: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 2px;
+    overflow-x: auto;
+  }
+
+  .navigationButton_active::before {
+    height: 4px;
+  }
+
+  .image_container {
+    aspect-ratio: 16/9;
+  }
+}
+
+/*@media (max-width: 670px) {
+  .slide {
+    grid-template-rows: auto auto clamp(120px, -22.86vw + 273.14px, 200px) auto;
+  }
+}*/

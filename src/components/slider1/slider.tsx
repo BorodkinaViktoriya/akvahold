@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./SimpleSlider.module.scss";
-import { slides } from "@/lib/constants/kupeli-slides";
+import { slides } from "@/lib/constants/kupeli_main";
 
 
 export default function SimpleSlider() {
@@ -25,7 +25,7 @@ export default function SimpleSlider() {
             <div
     className={styles.slide}
     style={{ backgroundImage: `url(${currentSlide.image})` }}
->console.log('currentSlide.image:', currentSlide.image);
+>
     {/* Верхние кнопки переключения по центру */}
     <div className={styles.leftNav}>
         {slides.map((slide, index) => (

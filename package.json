@@ -2,16 +2,25 @@
   "name": "akvahold",
   "version": "0.1.0",
   "private": true,
+  "description": "ООО Аква Холд, производственная компания",
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
+    "deploy": "gh-pages -d out",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "next": "^16.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -21,6 +30,7 @@
     "cssnano": "^6.1.2",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.31",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.5.0",

@@ -1,0 +1,99 @@
+.list {
+  padding: 0 10%;
+}
+
+.featureBlock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 47% 1fr;
+  margin: 0 auto 2%;
+  gap: 9%
+}
+
+.featureBlock:last-child {
+  margin-bottom: 0;
+}
+
+.imageWrapper {
+  display: block;
+  aspect-ratio: 7/8;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  display: flex;
+  gap: 2.5%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chess__title {
+  white-space: pre-line;
+  /*font-size: clamp(20px, 2.08vw, 40px);*/
+  max-width: 86%;;
+  font-weight: var(--fw-semi);
+  margin-bottom: 2%;
+}
+
+.content p {
+  max-width: 86%;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+}
+
+.content p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.reverse {
+  direction: rtl;
+}
+
+.reverse .content {
+  direction: ltr;
+}
+
+@media (max-width: 1110px) {
+  .chess__title,
+  .content p {
+    max-width: unset;
+  }
+
+  .chess__title {
+    margin-bottom: 3%;
+  }
+
+}
+
+@media (max-width: 770px) {
+  .list {
+    padding: 0;
+  }
+
+  .featureBlock {
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    row-gap: 40px;
+  }
+
+  .content {
+    padding: 0 20px; //TODO  проверить остальные отступы
+    margin-bottom: 40px;
+  }
+
+  .chess__title {
+    white-space: pre-line;
+    max-width: 86%;;
+    margin-bottom: 40px; //TODO можно пересчитать все отступы c clamp
+  }
+}
+

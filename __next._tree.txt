@@ -1,4 +1,4 @@
 :HL["/akvahold/_next/static/chunks/b7dde29703a24383.css","style"]
 :HL["/akvahold/_next/static/chunks/527f0765db447b6a.css","style"]
-:HL["/images/logo.png","image"]
-0:{"buildId":"MIqdQfJ59ztVu33ORME57","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["images/logo.png","image"]
+0:{"buildId":"rXTCPebFRnq8C85SuNNcZ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -12,6 +12,8 @@ import {ImageTextChess} from "@/components/ui/ImageTextChess/ImageTextChess";
 import SliderLeft from "@/components/ui/SliderLeft/SliderLeft";
 import YandexMap from "@/components/YandexMap/YandexMapClient";
 import SliderModels from "@/components/ui/SliderModels/SliderModels";
+import CardSlider from "@/components/ui/CardSlider/CardSlider";
+import { cards } from "@/lib/constants/kupeli_main";
 
 export default function Home() {
   return (
@@ -24,7 +26,7 @@ export default function Home() {
       <SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха" isDark={true} />
       <SliderModels/>
       <SectionTitle highlight="Широкие возможности" text="оснащения купелей" isDark={false} />
-      <YandexMap/>
+      <CardSlider cards={cards}/>
       <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} />
       <SimpleSlider/>
       <SectionTitle highlight="Реализованные" text="проекты" isDark={false} />

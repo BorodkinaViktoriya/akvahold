@@ -1,6 +1,6 @@
 .slider {
   width: 100%;
-  min-height:50vh;
+  min-height: 50vh;
   position: relative;
   overflow: hidden;
 }
@@ -110,13 +110,14 @@
   font-weight: var(--fw-semi);
   font-size: 24px;
 }
+
 .navigationButton::after {
   content: "";
   position: absolute;
-  left: -20px;   /* вровень с серой линией */
+  left: -20px; /* вровень с серой линией */
   top: 0;
   height: 100%;
-  width: 3px;    /* толще */
+  width: 3px; /* толще */
   background: transparent;
   transition: background 0.4s ease;
 }
@@ -180,17 +181,17 @@
   min-height: 106px;
 }
 
-.value{
+.value {
   font-size: var(--fs-h4);
 
 }
 
-.unit{
+.unit {
   margin-left: 8px;
   font-size: 14px;
 }
 
-.label{
+.label {
   font-size: 16px;
   max-width: 110px;
 }
@@ -213,17 +214,17 @@
     min-height: 45px;
     font-size: 14px;
   }
-  .prices{
+  .prices {
     min-width: 200px;
     min-height: 45px;
     font-size: 14px;
   }
-.info {
-  min-height: 105px;
-}
+  .info {
+    min-height: 105px;
+  }
 
-  .infoItem{
-    gap:5px;
+  .infoItem {
+    gap: 5px;
   }
 }
 
@@ -237,7 +238,6 @@
       "price price"
       "info info"
       "consult prices";
-
   }
 
   .description {
@@ -245,10 +245,7 @@
   }
 
   .navigation {
-     gap: 15px;
-  }
-
-  .navigationButton {
+    gap: 15px;
   }
 
   .navigationButton_active {
@@ -264,19 +261,16 @@
   .price {
     grid-area: price;
     margin-bottom: 20px;
-
   }
 
   .consult {
     grid-area: consult;
-    min-width: 180px;
   }
 
   .prices {
     grid-area: prices;
     justify-self: start;
     margin-left: 15px;
-    min-width: 180px;
   }
 
   .info {
@@ -286,18 +280,18 @@
     margin-bottom: 20px;
 
   }
-  .value{
+  .value {
     font-size: var(--fs-h4);
   }
 
-  .unit{
+  .unit {
     margin-left: 8px;
     font-size: 14px;
   }
 
-  .label{
+  .label {
     font-size: 14px;
-    max-width: 110px;
+    max-width: 120px;
   }
 }
 
@@ -312,32 +306,41 @@
       "info info"
       "consult prices";
   }
+
   .navigation {
     margin-top: 20px;
     max-width: 200px;
   }
-.price{
-  max-width: 200px;
-}
-  .consult{
+
+  .price {
+    max-width: 200px;
+  }
+
+  .image_container {
+    width: 100vw;
+    margin: 0 -20px;
+  }
+  .consult {
     justify-self: start;
   }
 
-  .prices{
+  .prices {
     margin-left: 20px;
   }
 
   .info {
-   min-height: 180px;
-    grid-template-columns: repeat(auto-fit, 115px);
+    width: 100%;
+    min-height: 180px;
+    grid-template-columns: repeat(auto-fit, 120px);
     gap: 15px;
   }
 
 }
 
-@media (max-width: 424px) {
+@media (max-width: 480px) {
   .slide {
-  grid-template-areas:
+    grid-template-columns: 1fr;
+    grid-template-areas:
       "description"
       "nav"
       "image"
@@ -345,24 +348,20 @@
       "info"
       "consult"
       "prices";
-}
-  .info {
-    min-height: 290px;
   }
 
   .consult {
     grid-area: consult;
-    min-width: 180px;
   }
 
   .prices {
     grid-area: prices;
     justify-self: start;
     margin: 20px 0 0 0;
-    min-width: 180px;
   }
+
   .info {
-    grid-template-columns: repeat(2, max-content);
     gap: 10px;
+    min-height: 290px;
   }
 }

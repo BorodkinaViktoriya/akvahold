@@ -1,0 +1,72 @@
+.slider {
+  width: 100%;
+  position: relative;
+  padding: 0 4vw;
+}
+
+/* Стрелки слева вверху*/
+.arrows {
+  grid-area: arrows;
+  display: flex;
+  column-gap: 24px;
+  position: absolute;
+  right: 4vw;
+  bottom: 100%;
+  margin-bottom: 30px
+}
+
+.arrowButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 65px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.arrowButton:hover {
+  opacity: 0.6;
+}
+
+.arrowButton_right img {
+  transform: scaleX(-1);
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+}
+
+.card {
+  width: 345px;
+  flex-shrink: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.7;
+}

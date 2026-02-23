@@ -72,3 +72,10 @@
     width: 100%;
   }
 }
+
+@media (max-width: 750px){
+  .header {
+    max-height: 40px;
+  }
+
+}

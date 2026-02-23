@@ -2,6 +2,7 @@
 
 import styles from "./Hero.module.scss";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
 
@@ -10,12 +11,13 @@ export default function Hero() {
       <picture className={styles.imageWrapper}>
         {/* Мобильная картинка для экранов <1000px */}
         <source
-          srcSet="/images/Kupeli/kupeli-hero-vert.jpg"
+          srcSet={asset("/images/kupeli/kupeli-hero-vert.jpg")}
           media="(max-width: 750px)"
         />
         {/* Десктопная картинка по умолчанию */}
         <Image
-          src="/images/Kupeli/kupeliHero.jpg"
+          unoptimized
+          src={asset("/images/kupeli/kupeliHero.jpg")}
           fill
           alt="Деревянная купель Good Line, окруженная заснеженными деревьями и светящаяся ночью фиолетовыми и белыми огнями."
           className={styles.img}

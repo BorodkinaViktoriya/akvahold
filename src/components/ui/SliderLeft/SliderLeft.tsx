@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+/*import { asset } from "@/lib/asset";*/
 
 type SlideLeft = {
   id: number;
@@ -24,7 +25,7 @@ export const leftSlides: SlideLeft[] = [
       "Массив кедра и лиственницы подчёркивает естественную красоту и долговечность купели.",
       "Нержавеющая сталь добавляет изящный визуальный акцент и завершает образ изделия."
     ],
-    image: "images/Kupeli/slider-left/ls1.jpg/",
+    image: "images/kupeli/slider-left/ls1.jpg",
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ export const leftSlides: SlideLeft[] = [
       "Глубина 1100 мм обеспечивает полное погружение плеч, делая отдых в воде максимально комфортным.",
       "Сиденья на высоте 450 мм и прямые стенки обеспечивают простор для ног и естественное положение коленей."
     ],
-    image: "images/Kupeli/slider-left/ls2.jpg/",
+    image: "images/kupeli/slider-left/ls2.jpg",
   },
   {
     id: 3,
@@ -48,21 +49,8 @@ export const leftSlides: SlideLeft[] = [
       "Уникальный «П»-образный борт предотвращает перелив воды даже при активном купании и сохраняет комфортный уровень без лишнего долива и подогрева.",
       "Ширина борта 140 мм позволяет удобно размещать бокалы и аксессуары прямо на борту купели."
     ],
-    image: "images/Kupeli/slider-left/ls3.jpg/",
+    image: "images/kupeli/slider-left/ls3.jpg",
   },
-  /*{
-    id: 4,
-    title: {
-      strong: "Продуманная",
-      normal: "инженерия",
-    },
-    description: [
-      "Всё доп. оборудование скрыто под обшивкой и доступно через запираемую техдверцу.",
-      "Продуманная компоновка обеспечивает простое и удобное обслуживание.",
-      "Влагозащищённый электрощиток с дифавтоматом отвечает за безопасность купания."
-    ],
-    image: "images/slider-test/slide-4.jpg",
-  },*/
   {
     id: 4,
     title: {
@@ -73,7 +61,7 @@ export const leftSlides: SlideLeft[] = [
       "Используем термокрышки LibeSpa с продуманной конструкцией и лучшими материалами.",
       "Наружный слой из яхтного винила защищает от влаги и солнца, а плотный утеплитель эффективно сохраняет тепло и выдерживает снеговые нагрузки."
     ],
-    image: "images/Kupeli/slider-left/ls4.jpg/",
+    image: "images/kupeli/slider-left/ls4.jpg",
   },
   {
     id: 5,
@@ -86,7 +74,7 @@ export const leftSlides: SlideLeft[] = [
       "Изготовлены из пищевой нержавеющей стали AISI 304, устойчивой к коррозии и нагрузкам (в отличие от AISI 430).",
       "Доступны стандартные и PRO-версии для повышенных нагрузок."
     ],
-    image: "images/Kupeli/slider-left/ls5.jpg/",
+    image: "images/kupeli/slider-left/ls5.jpg",
   },
 ];
 
@@ -145,7 +133,13 @@ export default function SliderLeft() {
             className={styles.arrowButton}
             aria-label="Предыдущий слайд"
           >
-            <img src="/images/arrow.svg" alt=""/>
+            <Image
+              width={65}
+              height={32}
+              style={{ objectFit: 'contain' }}
+              src={"images/arrow.svg"}
+              alt="arrow"
+            />
           </button>
           <button
             type="button"
@@ -153,7 +147,13 @@ export default function SliderLeft() {
             className={`${styles.arrowButton} ${styles.arrowButton_right}`}
             aria-label="Следующий слайд"
           >
-            <img src="/images/arrow.svg" alt=""/>
+            <Image
+              width={65}
+              height={32}
+              style={{ objectFit: 'contain' }}
+              src={"images/arrow.svg"}
+              alt="arrow"
+            />
           </button>
         </div>
         <h4 className={styles.title}>

@@ -50,7 +50,7 @@ export const slides: Slide[] = [
     },
 ];
 
-type FeatureItem = {
+export type FeatureItem = {
   image: string
   title: string
   text: string[]
@@ -58,7 +58,7 @@ type FeatureItem = {
 
 export const items: FeatureItem[] = [
   {
-    image: "/images/Kupeli/for_family.jpg",
+    image: "images/kupeli/for_family.jpg",
     title: "Для дома и семьи",
      text: [
   "Отличный способ провести вечер с родными: спокойно пообщаться, снять напряжение и почувствовать, что вы по-настоящему отдохнули.",
@@ -66,7 +66,7 @@ export const items: FeatureItem[] = [
   "После остаётся главное — радость и приятные воспоминания."
 ]},
   {
-    image: "/images/Kupeli/for_wellness.jpg",
+    image: "images/kupeli/for_wellness.jpg",
     title: "Для бизнеса \n (SPA, wellness)",
     text: [
       "Отличный способ провести вечер с родными: спокойно пообщаться, снять напряжение и почувствовать, что вы по-настоящему отдохнули.",

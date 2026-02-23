@@ -2,92 +2,244 @@
 
 import Image from "next/image";
 
-type SlideModels = {
+type models = {
   id: number;
   title: string;
   image: string;
-  info: [
-    {
-      value: string;
-      title: string;
-      subtitle: string;
-    }];
+  price: string;
+  info: { value: string; unit: string; label: string }[];
 }
 
-export const SlidesModels: SlideModels[] = [
+export const TubModels: models[] = [
   {
     id: 1,
     title: "SPA",
-    image: "images/Kupeli/models/Good-LINE-SPA (transparent).png",
+    image: "images/kupeli/models/spa.png",
+    price: "от 541 000 р",
     info: [
       {
+        value: "45",
+        unit: "КВт",
+        label: "мощность печи",
+      },
+      {
+        value: "2-4",
+        unit: "часа",
+        label: "время нагрева",
+      },
+      {
+        value: "4-8",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
         value: "3",
-        title: "кВт",
-        subtitle: "мощность нагрева",
+        unit: " ",
+        label: "типоразмера",
       },
       {
-        value: "10 - 40",
-        title: "°C",
-        subtitle: "регулируемый температурный диапазон ",
+        value: "3",
+        unit: " ",
+        label: "базовых цвета",
       },
       {
-        value:"4 - 8",
-        title: "мест",
-        subtitle: "вместимость",
-      },
-      {
-        value: "4 - 8",
-        title: "мест",
-        subtitle: "вместимость",
+        value: "1100",
+        unit: "мм",
+        label: "глубина чаши",
       }
     ]
   },
   {
     id: 2,
-    title: "PREMIUM",
-    image: "images/Kupeli/models/Good LINE PREMIUM (transparent).png",
+    title: "Premium",
+    image: "images/kupeli/models/premium.png",
+    price: "от 550 000 р",
     info: [
       {
-        value: "5",
-        title: "кВт",
-        subtitle: "мощность нагрева",
+        value: "35",
+        unit: "КВт",
+        label: "мощность печи",
       },
       {
-        value: "5",
-        title: "кВт",
-        subtitle: "мощность нагрева",
+        value: "3-4",
+        unit: "часа",
+        label: "время нагрева",
       },
-    ]
-  },
-  {
-    id: 3,
-    title: "PREMIUM-E (электро)",
-    image: "images/Kupeli/models/Good LINE PREMIUM-E (transparent).png",
-    info: [
+      {
+        value: "4-8",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
+        value: "2",
+        unit: " ",
+        label: "типоразмера",
+      },
       {
         value: "3",
-        title: "кВт",
-        subtitle: "мощность нагрева",
+        unit: " ",
+        label: "базовых цвета",
       },
       {
-        value: "10 - 40",
-        title: "°C",
-        subtitle: "регулируемый температурный диапазон ",
-      },
-      {
-        value: "4 - 8",
-        title: "мест",
-        subtitle: "вместимость",
-      },
-      {
-        value: "4 - 8",
-        title: "мест",
-        subtitle: "вместимость",
+        value: "1100",
+        unit: "мм",
+        label: "глубина чаши",
       }
     ]
   },
+  /*,
+  {
+    id: 3,
+    title: "BOOST",
+    image: "images/kupeli/models/boost.png",
+    price: "от 500 000 р",
+    info: [
+      {
+        value: "35",
+        unit: "КВт",
+        label: "мощность печи",
+      },
+      {
+        value: "2-3",
+        unit: "часа",
+        label: "время нагрева",
+      },
+      {
+        value: "4-6",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
+        value: "2",
+        unit: " ",
+        label: "типоразмера",
+      },
+      {
+        value: "3",
+        unit: " ",
+        label: "базовых цвета",
+      },
+      {
+        value: "1100",
+        unit: "мм",
+        label: "глубина чаши",
+      }
+    ]
+  },*/ /*{
+    id: 4,
+    title: "Quadro",
+    image: "images/kupeli/models/quadro.png",
+    price: "от 580 000 р",
+    info: [
+      {
+        value: "70",
+        unit: "КВт",
+        label: "мощность печи",
+      },
+      {
+        value: "3-4",
+        unit: "часа",
+        label: "время нагрева",
+      },
+      {
+        value: "6",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
+        value: "1",
+        unit: " ",
+        label: "типоразмера",
+      },
+      {
+        value: "3",
+        unit: " ",
+        label: "базовых цвета",
+      },
+      {
+        value: "1100",
+        unit: "мм",
+        label: "глубина чаши",
+      }
+    ]
+  }, *//*{
+    id: 5,
+    title: "Kids",
+    image: "images/kupeli/models/kids.png",
+    price: "от 520 000 р",
+    info: [
+      {
+        value: "45",
+        unit: "КВт",
+        label: "мощность печи",
+      },
+      {
+        value: "2-3",
+        unit: "часа",
+        label: "время нагрева",
+      },
+      {
+        value: "4-6",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
+        value: "2",
+        unit: " ",
+        label: "типоразмера",
+      },
+      {
+        value: "3",
+        unit: " ",
+        label: "базовых цвета",
+      },
+      {
+        value: "750",
+        unit: "мм",
+        label: "глубина чаши",
+      }
+    ]
+  },*/
+  {
+    id: 3,
+    title: "Electro",
+    image: "images/kupeli/models/premium-e.png",
+    price: "от 575 000 р",
+    info: [
+      {
+        value: "3",
+        unit: "кВт",
+        label: "мощность нагрева",
+      },
 
+      {
+        value: "10-40",
+        unit: "°C",
+        label: "регулируемый температурный диапазон",
+      },
+      {
+        value: "4 - 8",
+        unit: "мест",
+        label: "вместимость",
+      },
+      {
+        value: "2",
+        unit: " ",
+        label: "типоразмера",
+      },
+      {
+        value: "4500",
+        unit: "₽/мес",
+        label: "расходы на электроэнергию",
+      },
+      {
+        value: "90",
+        unit: "Вт",
+        label: "мощность системы фильтрации",
+      },
 
+    ]
+  },
 ];
 
 import {useState, useEffect, useRef} from "react";
@@ -100,15 +252,15 @@ export default function SliderModels() {
   const navRef = useRef<HTMLDivElement>(null);
 
   const goTo = (index: number) => {
-    if (index < 0) index = SlidesModels.length - 1;
-    if (index >= SlidesModels.length) index = 0;
+    if (index < 0) index = TubModels.length - 1;
+    if (index >= TubModels.length) index = 0;
     setActiveIndex(index);
   };
 
   const goPrev = () => goTo(activeIndex - 1);
   const goNext = () => goTo(activeIndex + 1);
 
-  const currentSlide = SlidesModels[activeIndex];
+  const currentSlide = TubModels[activeIndex];
 
   useEffect(() => {
     const container = navRef.current;
@@ -140,7 +292,7 @@ export default function SliderModels() {
         <p className={styles.description}>модельный ряд</p>
 
         <div ref={navRef} className={styles.navigation}>
-          {SlidesModels.map((slide, index) => (
+          {TubModels.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
@@ -151,41 +303,33 @@ export default function SliderModels() {
               aria-label={`Показать слайд ${index + 1}`}
               aria-current={index === activeIndex}
             >
-             {slide.title}
+              {slide.title}
             </button>
           ))}
         </div>
         <div className={styles.image_container} key={activeIndex}>
           <Image alt="Слайд"
                  className={styles.imageFade}
-                 fill src={currentSlide.image}
+                 fill
+                 src={currentSlide.image}
           />
         </div>
-        <div className={styles.info}>
-          {currentSlide.info.map((item, index) => (
-            <div key={index} className={styles.infoItem}>
-              <p >{item.value}</p>
-              <p>{item.title}</p>
-              <p>{item.subtitle}</p>
-            </div>
-          ))}
-        </div>
         <div className={styles.actions}>
-          <p>от 541 000 р</p>
-        <button >о модели
-          </button >
-          <button >прайс лист
-            </button >
+        <p className={styles.price} key={`price-${activeIndex}`}>{currentSlide.price}</p>
+          <button className={styles.consult}>получить консультацию
+          </button>
+          <button className={styles.prices}>прайс-лист
+          </button>
         </div>
-        {/*<div className={styles.actions}>
+
+        <div className={styles.info} key={`info-${activeIndex}`}>
           {currentSlide.info.map((item, index) => (
             <div key={index} className={styles.infoItem}>
-              <p >{item.value}</p>
-              <p>{item.title}</p>
-              <p>{item.subtitle}</p>
+              <p className={styles.value}>{item.value}<span className={styles.unit}>{item.unit}</span></p>
+              <p className={styles.label}>{item.label}</p>
             </div>
           ))}
-        </div>*/}
+        </div>
       </div>
     </section>
   );

@@ -1,21 +1,43 @@
 @use "../styles/index";
+/*$base-path: "";*/
 
-/*$background-color: #cdc5bf;
+$base-path: "/akvahold";
+/* Montserrat Regular */
+@font-face {
+  font-family: "Montserrat";
+  src: url("#{$base-path}/fonts/Montserrat/montserrat-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-$dark-color: #232323;
-$accent-color: #171E22;
+/* Montserrat Bold (600) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("#{$base-path}/fonts/Montserrat/montserrat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
-:export {
-
-  backgroundColor:$background-color;
-
-}*/ //TODO удалить лишнее
+/* Pacifico */
+@font-face {
+  font-family: "Pacifico";
+  src: url("#{$base-path}/fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --fs-h1: clamp(50px, 3.0625vw + 40.2px, 99px);
   --fs-h2: clamp(24px, 2.25vw + 16.8px, 60px);
   --fs-h3: clamp(20px, 1.25vw + 16px, 40px);
   --fs-h4: clamp(18px, 0.875vw + 15.2px, 32px);
+
+  --fw-regular: 400;
+  --fw-semi: 600;
+
   --textDColor: #232323;
   --buttonColor:#024e6b;
 }
@@ -30,7 +52,7 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: "Montserrat", sans-serif;;
   max-width: 2000px;
   overflow-x: hidden;
   background-color: var(--background-light);

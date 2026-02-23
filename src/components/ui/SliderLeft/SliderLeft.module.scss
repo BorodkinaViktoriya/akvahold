@@ -129,7 +129,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 1px;
   background-color: var(--color-text-dark);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Анимируем только ширину */
   opacity: 1;
@@ -141,7 +141,7 @@
 }
 
 .navigationButton_active::before {
-  width: 4px;
+  width: 2px;
   opacity: 1;
 }
 

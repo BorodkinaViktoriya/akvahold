@@ -1,25 +1,91 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect, useLayoutEffect  } from "react";
 import Image from "next/image";
 import styles from "./CardSlider.module.scss";
 import { asset } from "@/lib/asset";
-import { Card } from "@/lib/constants/kupeli_main.ts";
+import { Card } from "@/lib/constants/kupeli_main";
 
 export default function CardSlider({ cards }: { cards: Card[] }) {
-  const [index, setIndex] = useState(0);
-const CARD_WIDTH = 345;
-const GAP = 16;
-const STEP = CARD_WIDTH + GAP;
 
-const maxIndex = cards.length - 1;
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const firstCardRef = useRef<HTMLDivElement>(null);
 
-const goNext = () => {
-  setIndex((prev) => Math.min(prev + 1, maxIndex));
-};
+  const [step, setStep] = useState(0);
 
-const goPrev = () => {
-  setIndex((prev) => Math.max(prev - 1, 0));
-};
+  // 📏 Получаем ширину карточки
+  useLayoutEffect(() => {
+    const updateWidth = () => {
+      if (firstCardRef.current) {
+        // Прибавляем 20px к ширине
+        const width = firstCardRef.current.offsetWidth + 20;
+        setStep(width);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+      const goNext = () => {
+        viewportRef.current?.scrollBy({
+          left: step,
+          behavior: "smooth"
+        });
+      };
+
+      const goPrev = () => {
+        viewportRef.current?.scrollBy({
+          left: -step,
+          behavior: "smooth"
+        });
+      };
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDown = true;
+      startX = e.pageX - viewport.offsetLeft;
+      scrollLeft = viewport.scrollLeft;
+      viewport.style.cursor = "grabbing";
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      viewport.style.cursor = "grab";
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      viewport.style.cursor = "grab";
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - viewport.offsetLeft;
+      const walk = x - startX;
+      viewport.scrollLeft = scrollLeft - walk;
+    };
+
+    viewport.addEventListener("mousedown", handleMouseDown);
+    viewport.addEventListener("mouseleave", handleMouseLeave);
+    viewport.addEventListener("mouseup", handleMouseUp);
+    viewport.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      viewport.removeEventListener("mousedown", handleMouseDown);
+      viewport.removeEventListener("mouseleave", handleMouseLeave);
+      viewport.removeEventListener("mouseup", handleMouseUp);
+      viewport.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
 return (
   <div className={styles.slider}>
@@ -30,7 +96,6 @@ return (
         onClick={goPrev}
         className={styles.arrowButton}
         aria-label="Предыдущий слайд"
-        disabled={index === 0}
       >
         <Image
           width={65}
@@ -45,7 +110,6 @@ return (
         onClick={goNext}
         className={`${styles.arrowButton} ${styles.arrowButton_right}`}
         aria-label="Следующий слайд"
-        disabled={index === maxIndex}
       >
         <Image
           width={65}
@@ -56,18 +120,13 @@ return (
         />
       </button>
     </div>
-    <div className={styles.viewport}>
-      <div
-        className={styles.track}
-        style={{
-          transform: `translateX(-${index * STEP}px)`
-        }}
-      >
-        {cards.map((card) => (
-          <div key={card.id} className={styles.card}>
+    <div className={styles.viewport} ref={viewportRef}>
+
+        {cards.map((card, i ) => (
+          <div key={card.id} className={styles.card} ref={i === 0 ? firstCardRef : null} >
             <div className={styles.imageWrapper}>
               <Image
-                src={card.image}
+                src={asset(card.image)}
                 alt={card.title}
                 fill
                 className={styles.image}
@@ -75,11 +134,11 @@ return (
             </div>
 
             <h3 className={styles.title}>{card.title}</h3>
-            <p className={styles.subtitle}>{card.subtitle}</p>
+            <p className={styles.text}>{card.text}</p>
           </div>
         ))}
       </div>
-    </div>
+
   </div>
 );
 }

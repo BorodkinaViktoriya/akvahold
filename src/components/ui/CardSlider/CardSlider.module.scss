@@ -1,7 +1,6 @@
 .slider {
   width: 100%;
   position: relative;
-  padding: 0 4vw;
 }
 
 /* Стрелки слева вверху*/
@@ -12,7 +11,8 @@
   position: absolute;
   right: 4vw;
   bottom: 100%;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  z-index: 10;
 }
 
 .arrowButton {
@@ -33,40 +33,85 @@
 }
 
 .viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-.track {
   display: flex;
   gap: 16px;
-  transition: transform 0.4s ease;
+  overflow-x: auto;
+  padding: 0 4vw;
+  scrollbar: none;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
-  width: 345px;
-  flex-shrink: 0;
+  flex: 0 0 18vw;
+  min-width: 18vw;
+  user-select: none;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 520px;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .title {
   margin-top: 16px;
   font-size: 24px;
   font-weight: 700;
+  line-height: 1.2;
+  min-height: 2.4em;
 }
 
-.subtitle {
+.text {
   margin-top: 6px;
   font-size: 14px;
   opacity: 0.7;
+}
+
+@media (max-width: 1485px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 1237px) {
+
+  .card {
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .arrows {
+    display: none;
+  }
+  .card {
+    flex: 0 0 250px;
+  }
+  .title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 570px) {
+  .card {
+    flex: 0 0 230px;
+  }
 }

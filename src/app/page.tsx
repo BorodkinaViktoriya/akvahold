@@ -13,6 +13,7 @@ import SliderLeft from "@/components/ui/SliderLeft/SliderLeft";
 import YandexMap from "@/components/YandexMap/YandexMapClient";
 import SliderModels from "@/components/ui/SliderModels/SliderModels";
 import CardSlider from "@/components/ui/CardSlider/CardSlider";
+import { details } from "@/lib/constants/kupeli_main";
 import { cards } from "@/lib/constants/kupeli_main";
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
       <SectionTitle highlight="SPA-зона" text="в любое время года" isDark={false}/>
       <ImageTextChess />
       <SectionTitle highlight="Good Line - качество" text="в каждой детали" isDark={false} />
-      <SliderLeft/>
+      <SliderLeft details={details}/>
       <SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха" isDark={true} />
       <SliderModels/>
       <SectionTitle highlight="Широкие возможности" text="оснащения купелей" isDark={false} />

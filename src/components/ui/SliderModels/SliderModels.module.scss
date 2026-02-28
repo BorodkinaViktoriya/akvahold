@@ -3,6 +3,14 @@
   min-height: 50vh;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+      to top,
+      #CDC5BF 0%,
+      #8B7C71 20%,
+      #5B5048 40%,
+      #5B5048 100%
+  );
+  margin-top: -2px;
 }
 
 .slide {
@@ -18,13 +26,6 @@
     "nav image actions"
     "info info info";
   color: var(--white);
-  background: linear-gradient(
-      to top,
-      #CDC5BF 0%,
-      #8B7C71 20%,
-      #5B5048 40%,
-      #5B5048 100%
-  );
 }
 
 /* Подпись слайдера */

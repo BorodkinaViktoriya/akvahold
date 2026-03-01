@@ -19,7 +19,7 @@
     "title image"
     "description image"
     "nav image";
-  gap:  0 4vw;
+  gap: 0 4vw;
   color: var(--color-text-dark);
 }
 
@@ -82,14 +82,18 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Левые кнопки-переключатели */
 .navigation {
   grid-area: nav;
- /* justify-self: start;*/
+  /* justify-self: start;*/
   margin-top: auto;
   font-size: 0;
   display: flex;
@@ -117,12 +121,12 @@
   box-sizing: border-box;
   flex-shrink: 0;
   white-space: nowrap;
-  transition:
-    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.4s ease;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  padding 0.4s ease;
 
 }
+
 .navigationButton::before {
   content: "";
   position: absolute;
@@ -137,7 +141,7 @@
 
 
 .navigationButton_active .bottom {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .navigationButton_active::before {
@@ -175,11 +179,11 @@
     min-height: min-content;
   }
   .slide {
+    min-height: min-content;
     padding-left: 0;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto clamp(80px, calc(200px - 0.1714 * 100vw), 200px) auto;
-    /*grid-template-rows: auto auto clamp(85px, -10.03vw + 187.3px, 120px)  auto;*/
     grid-template-areas:
     "nav"
     "image"
@@ -191,8 +195,8 @@
     overflow: hidden;
     padding-bottom: 2.3vw;
   }
-  .arrows{
-     justify-self: center;
+  .arrows {
+    justify-self: center;
     margin-bottom: 0;
   }
   .title {
@@ -228,7 +232,7 @@
   }
 
 
- .navigationButton::before {
+  .navigationButton::before {
     bottom: auto;
     top: 0;
     left: 0;

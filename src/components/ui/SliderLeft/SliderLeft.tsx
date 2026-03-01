@@ -3,9 +3,17 @@
 import Image from "next/image";
 import {useState, useEffect, useRef} from "react";
 import styles from "./SliderLeft.module.scss";
-import {Detail} from "@/lib/constants/kupeli_main";
 
-export default function SliderLeft({details}: { detail: Detail[] }) {
+interface SliderLeftProps {
+  details: {
+    id: number;
+    title: { strong: string; normal: string; };
+    description: string[];
+    image: string;
+  }[];
+}
+
+export default function SliderLeft({ details }: SliderLeftProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
 

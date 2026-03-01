@@ -1,11 +1,11 @@
 "use client";
 import { useState, useRef, useEffect, useLayoutEffect  } from "react";
 import Image from "next/image";
-import styles from "./CardSlider.module.scss";
+import styles from "./CardsSlider.module.scss";
 import { asset } from "@/lib/asset";
 import { Card } from "@/lib/constants/kupeli_main";
 
-export default function CardSlider({ cards }: { cards: Card[] }) {
+export default function CardsSlider({ cards }: { cards: Card[] }) {
 
   const viewportRef = useRef<HTMLDivElement>(null);
   const firstCardRef = useRef<HTMLDivElement>(null);
@@ -133,7 +133,7 @@ return (
               />
             </div>
 
-            <h3 className={styles.title}>{card.title}</h3>
+            <h5 className={styles.title}>{card.title}</h5>
             <p className={styles.text}>{card.text}</p>
           </div>
         ))}

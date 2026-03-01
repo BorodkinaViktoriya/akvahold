@@ -20,11 +20,11 @@ $base-path: "/akvahold";
   font-display: swap;
 }
 
-/* Pacifico */
+/* Familjen Grotesk */
 @font-face {
-  font-family: "Pacifico";
-  src: url("#{$base-path}/fonts/Pacifico-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Familjen";
+  src: url("#{$base-path}/fonts/Familjen/FamiljenGrotesk-SemiBold.woff") format("woff2");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -34,7 +34,7 @@ $base-path: "/akvahold";
   --fs-h2: clamp(24px, 2.25vw + 16.8px, 60px);
   --fs-h3: clamp(20px, 1.25vw + 16px, 40px);
   --fs-h4: clamp(18px, 0.875vw + 15.2px, 32px);
-
+  --fs-h5: clamp(18px, 0.375vw + 16.8px, 24px);
   --fw-regular: 400;
   --fw-semi: 600;
 
@@ -52,7 +52,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;;
+  font-family: "Montserrat", sans-serif;
   max-width: 2000px;
   overflow-x: hidden;
   background-color: var(--background-light);
@@ -93,6 +93,10 @@ h4 {
   line-height: 120%;
 }
 
+h5 {
+  font-size: var(--fs-h5);
+  line-height: 120%;
+}
 
 button {
   font-family: var(--font-main);

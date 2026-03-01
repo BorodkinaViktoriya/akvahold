@@ -1,3 +1,3 @@
 :HL["/akvahold/_next/static/chunks/f056985512e18b38.css","style"]
-:HL["/akvahold/_next/static/chunks/b71b877629122680.css","style"]
-0:{"buildId":"UWf3urZhsuSBP2Z5zZl6U","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/akvahold/_next/static/chunks/6dee116a1229c87c.css","style"]
+0:{"buildId":"OpIIi00azo7Nav2gyujmH","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

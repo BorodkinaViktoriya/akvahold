@@ -7,6 +7,7 @@ type models = {
   title: string;
   image: string;
   price: string;
+  pdf: string;
   info: { value: string; unit: string; label: string }[];
 }
 
@@ -16,6 +17,7 @@ export const TubModels: models[] = [
     title: "SPA",
     image: "images/kupeli/models/spa.png",
     price: "от 541 000 р",
+    pdf: "./docs/prises/Premium.pdf",
     info: [
       {
         value: "45",
@@ -54,6 +56,7 @@ export const TubModels: models[] = [
     title: "Premium",
     image: "images/kupeli/models/premium.png",
     price: "от 550 000 р",
+    pdf: "./docs/prises/Premium.pdf",
     info: [
       {
         value: "35",
@@ -205,6 +208,7 @@ export const TubModels: models[] = [
     title: "Electro",
     image: "images/kupeli/models/premium-e.png",
     price: "от 575 000 р",
+    pdf: "./docs/prises/Premium-E.pdf",
     info: [
       {
         value: "3",
@@ -318,7 +322,7 @@ export default function SliderModels() {
         <p className={styles.price} key={`price-${activeIndex}`}>{currentSlide.price}</p>
           <button className={styles.consult}>получить консультацию
           </button>
-          <button className={styles.prices}>прайс-лист
+          <button className={styles.prices} onClick={() => window.open(currentSlide.pdf, '_blank', 'noopener,noreferrer')}>прайс-лист
           </button>
         </div>
 

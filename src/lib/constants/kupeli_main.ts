@@ -14,7 +14,7 @@ export const slides: Slide[] = [
     subtitle: "здоровье и отдых",
     description:
       "Купание в горячей воде улучшает кровообращение, снимает мышечное напряжение и помогает восстановиться после работы, тренировки или в холодную погоду.",
-    image: "images/slider-test/1.png",
+    image: "images/slider-test/spa2.png",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const slides: Slide[] = [
     subtitle: "и хромотерапия",
     description:
       "Мягкая RGB-подсветка и смена цветов создают атмосферу вечернего спа и превращают купание в красивый вечерний ритуал.",
-    image: "images/slider-test/2.png",
+    image: "images/slider-test/premium-e2.png",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const slides: Slide[] = [
     subtitle: "лёгкость для тела",
     description:
       "Пузырьки от гейзера мягко массируют тело, улучшают микроциркуляцию и помогают снять усталость в пояснице и ногах.",
-    image: "images/slider-test/3.png",
+    image: "images/slider-test/premium2.png",
   },
   /*{
     id: 4,
@@ -102,7 +102,7 @@ export const details = [
       "Массив кедра и лиственницы подчёркивает естественную красоту и долговечность купели.",
       "Нержавеющая сталь добавляет изящный визуальный акцент и завершает образ изделия."
     ],
-    image: "images/kupeli/slider-left/ls1.jpg",
+    image: "images/kupeli/datails/ls1.jpg",
   },
   {
     id: 2,
@@ -114,7 +114,7 @@ export const details = [
       "Глубина 1100 мм обеспечивает полное погружение плеч, делая отдых в воде максимально комфортным.",
       "Сиденья на высоте 450 мм и прямые стенки обеспечивают простор для ног и естественное положение коленей."
     ],
-    image: "images/kupeli/slider-left/ls2.jpg",
+    image: "images/kupeli/datails/ls2.jpg",
   },
   {
     id: 3,
@@ -126,7 +126,7 @@ export const details = [
       "Уникальный «П»-образный борт предотвращает перелив воды даже при активном купании и сохраняет комфортный уровень без лишнего долива и подогрева.",
       "Ширина борта 140 мм позволяет удобно размещать бокалы и аксессуары прямо на борту купели."
     ],
-    image: "images/kupeli/slider-left/ls3.jpg",
+    image: "images/kupeli/datails/ls3.jpg",
   },
   {
     id: 4,
@@ -138,7 +138,7 @@ export const details = [
       "Используем термокрышки LibeSpa с продуманной конструкцией и лучшими материалами.",
       "Наружный слой из яхтного винила защищает от влаги и солнца, а плотный утеплитель эффективно сохраняет тепло и выдерживает снеговые нагрузки."
     ],
-    image: "images/kupeli/slider-left/ls4.jpg",
+    image: "images/kupeli/datails/ls4.jpg",
   },
   {
     id: 5,
@@ -151,7 +151,7 @@ export const details = [
       "Изготовлены из пищевой нержавеющей стали AISI 304, устойчивой к коррозии и нагрузкам (в отличие от AISI 430).",
       "Доступны стандартные и PRO-версии для повышенных нагрузок."
     ],
-    image: "images/kupeli/slider-left/ls5.jpg",
+    image: "images/kupeli/datails/ls5.jpg",
   },
 ];
 

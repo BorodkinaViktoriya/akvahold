@@ -1,0 +1,241 @@
+.slider {
+  width: 100%;
+  min-height: 50vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-text-dark);
+  margin-top: -2px;
+}
+
+.slide {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+  position: relative;
+  min-height: 60vh;
+  width: 100%;
+  padding: 3.2vw 0 3.2vw 4vw; //TODO сверить паддинги с остальными блоками
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  column-gap: 4vw;
+  row-gap: 1vw;
+  grid-template-areas:
+    "description description"
+    "title title"
+    "nav image"
+    "info info";
+  color: var(--white);
+}
+
+/* Подпись слайдера */
+.description {
+  grid-area: description;
+  font-size: 24px;
+  justify-self: center;
+}
+
+.title {
+  grid-area: title;
+  justify-self: center;
+  line-height: 1;
+}
+
+.image_container {
+  grid-area: image;
+  width: 80%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  justify-self: center;
+}
+
+.imageFade {
+  object-position: left bottom;
+  animation: fadeIn 0.6s ease-out forwards;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Левые кнопки-переключатели */
+.navigation {
+  grid-area: nav;
+  align-self: center;
+  font-size: 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  min-width: 170px;
+  padding: 0 20px;
+  gap: 18px;
+}
+
+.navigation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #9b8f85;
+}
+
+.navigationButton {
+  font-family: inherit;
+  font-weight: var(--fw-regular);
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  white-space: normal;
+  justify-content: start;
+  align-items: start;
+  max-width: 340px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navigationButton_active {
+  font-weight: var(--fw-semi);
+}
+
+.navigationButton::after {
+  content: "";
+  position: absolute;
+  left: -20px; /* вровень с серой линией */
+  top: 0;
+  height: 100%;
+  width: 3px; /* толще */
+  background: transparent;
+  transition: background 0.4s ease;
+}
+
+/* показываем линию у активной */
+.navigationButton_active::after {
+  background: var(--white);
+}
+
+.info {
+grid-area: info;
+  max-width: 55%;
+  text-align: center;
+  justify-self: center;
+  line-height: 1.2;
+  /*min-height: 3.6em;*/
+}
+
+.arrows {
+  color: var(--white);
+  width: 100%;
+  z-index: 7;
+  position: absolute;
+  padding: 0 4vw;
+  bottom: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrowButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 65px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  color: var(--white);
+}
+
+.arrowButton:hover {
+  opacity: 0.6;
+}
+
+.arrowButton_right img {
+  transform: scaleX(-1);
+}
+
+
+@media (max-width: 1300px) {
+  .slide {
+    padding: 20px;
+    min-height: min-content;
+  }
+
+  .arrows {
+    padding: 0 20px;
+  }
+
+}
+
+@media (max-width: 1020px) {
+
+
+  .description {
+    font-size: 18px;
+  }
+
+  .navigation {
+    gap: 15px;
+  }
+
+  .info {
+    max-width: 75%;
+  }
+
+}
+
+@media (max-width: 770px) {
+  .slide {
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "description"
+      "title"
+      "nav"
+      "image"
+      "info";
+  }
+
+  .navigation {
+    max-width: 280px;
+  }
+
+
+  .image_container {
+    width: 100vw;
+    margin: 0 -20px;
+  }
+
+  .info {
+    max-width: 90%
+  }
+  .arrows {display: none}
+}
+
+/*
+@media (max-width: 480px) {
+
+
+  .info {
+
+  }
+}
+*/ //TODO delete if nj need

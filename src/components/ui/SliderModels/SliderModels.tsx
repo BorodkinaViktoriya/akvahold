@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 type models = {
   id: number;
@@ -15,9 +16,9 @@ export const TubModels: models[] = [
   {
     id: 1,
     title: "SPA",
-    image: "images/kupeli/models/spa.png",
+    image: "images/kupeli/models/spa2.png",
     price: "от 541 000 р",
-    pdf: "./docs/prises/Premium.pdf",
+    pdf: "./docs/prises/premium.pdf",
     info: [
       {
         value: "45",
@@ -54,9 +55,9 @@ export const TubModels: models[] = [
   {
     id: 2,
     title: "Premium",
-    image: "images/kupeli/models/premium.png",
+    image: "images/kupeli/models/premium2.png",
     price: "от 550 000 р",
-    pdf: "./docs/prises/Premium.pdf",
+    pdf: "./docs/prises/premium.pdf",
     info: [
       {
         value: "35",
@@ -206,9 +207,9 @@ export const TubModels: models[] = [
   {
     id: 3,
     title: "Electro",
-    image: "images/kupeli/models/premium-e.png",
+    image: "images/kupeli/models/premium-e2.png",
     price: "от 575 000 р",
-    pdf: "./docs/prises/Premium-E.pdf",
+    pdf: "./docs/prises/premium-e.pdf",
     info: [
       {
         value: "3",
@@ -322,7 +323,7 @@ export default function SliderModels() {
         <p className={styles.price} key={`price-${activeIndex}`}>{currentSlide.price}</p>
           <button className={styles.consult}>получить консультацию
           </button>
-          <button className={styles.prices} onClick={() => window.open(currentSlide.pdf, '_blank', 'noopener,noreferrer')}>прайс-лист
+          <button className={styles.prices} onClick={() => window.open(asset(currentSlide.pdf), '_blank', 'noopener,noreferrer')}>прайс-лист
           </button>
         </div>
 

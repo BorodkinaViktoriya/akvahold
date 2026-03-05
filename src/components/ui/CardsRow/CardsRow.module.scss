@@ -53,6 +53,7 @@ width: 100%;
   color: var(--white);
   font-size: 20px;
   font-weight: var(--fw-semi);
+  border: none;
 }
 
 @media (max-width: 1348px) {
@@ -79,13 +80,13 @@ width: 100%;
   .row {
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
     width: 100%;
   }
 
   .row__card {
     max-width:  100%;
-    padding-bottom: 120px;
+    padding: 16px 16px 120px;
   }
 
   .row__title {
@@ -107,17 +108,23 @@ width: 100%;
 }
 
 @media (max-width: 691px) {
+
+  .row {
+    margin-bottom: 30px;
+  }
+
   .row__title {
     min-height: 2.4em;
   }
 
   .row__card {
-    padding-bottom: 60px;
+    padding: 10px 10px 60px;
   }
 
   .row__number {
     font-size: 60px;
   }
+
   .row__button {
     width: 100%;
   }

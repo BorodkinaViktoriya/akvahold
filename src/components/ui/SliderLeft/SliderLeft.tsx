@@ -69,7 +69,7 @@ export default function SliderLeft({ details }: SliderLeftProps) {
               height={32}
               style={{objectFit: 'contain'}}
               src={"images/arrow.svg"}
-              alt="arrow"
+              alt="стрелка"
             />
           </button>
           <button
@@ -114,7 +114,7 @@ export default function SliderLeft({ details }: SliderLeftProps) {
           ))}
         </div>
         <div className={styles.image_container} key={activeIndex}>
-          <Image alt="Слайд"
+          <Image alt={currentSlide.title}
                  className={styles.imageFade}
                  fill src={currentSlide.image}
                  style={{objectFit: "cover"}}/>

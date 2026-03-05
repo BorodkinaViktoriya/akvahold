@@ -6,12 +6,13 @@ export const metadata = {
 };
 
 import styles from "./page.module.css";
-import SimpleSlider from "@/components/slider1/slider";
+import SimpleSlider from "@/components/SimpleSliderTest/SimpleSlider";
 import Hero from "@/components/Hero/Hero";
 import {ImageTextChess} from "@/components/ui/ImageTextChess/ImageTextChess";
 import SliderLeft from "@/components/ui/SliderLeft/SliderLeft";
 import YandexMap from "@/components/YandexMap/YandexMapClient";
 import SliderModels from "@/components/ui/SliderModels/SliderModels";
+import SliderTwoTitles from "@/components/SliderTwoTitles/SliderTwoTitles";
 import CardsSlider from "@/components/ui/CardsSlider/CardsSlider";
 import CardsRow from "@/components/ui/CardsRow/CardsRow";
 import { details } from "@/lib/constants/kupeli_main";
@@ -32,11 +33,11 @@ export default function Home() {
       <CardsSlider cards={cards}/>
       <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} />
       <CardsRow cards={buisness} />
-      <SimpleSlider/>
+      <SliderTwoTitles />
       <SectionTitle highlight="Реализованные" text="проекты" isDark={false} />
-      <SimpleSlider/>
-      <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />
       <YandexMap/>
+      <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />
+      <SimpleSlider/>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 .slider {
   width: 100%;
-  min-height: 50vh;
+  /*min-height: 50vh;*/
   position: relative;
   overflow: hidden;
   background-color: var(--color-text-dark);
@@ -35,7 +35,7 @@
 .title {
   grid-area: title;
   justify-self: center;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .image_container {
@@ -102,6 +102,7 @@
   justify-content: start;
   align-items: start;
   max-width: 340px;
+  width: max-content;
   font-size: 16px;
   cursor: pointer;
   position: relative;
@@ -140,7 +141,7 @@ grid-area: info;
   text-align: center;
   justify-self: center;
   line-height: 1.2;
-  /*min-height: 3.6em;*/
+  min-height: 3.6em;
 }
 
 .arrows {
@@ -199,7 +200,9 @@ grid-area: info;
   .info {
     max-width: 75%;
   }
-
+  .arrows {
+    display: none
+  }
 }
 
 @media (max-width: 770px) {
@@ -215,7 +218,7 @@ grid-area: info;
   }
 
   .navigation {
-    max-width: 280px;
+    max-width: 300px;
   }
 
 
@@ -227,7 +230,7 @@ grid-area: info;
   .info {
     max-width: 90%
   }
-  .arrows {display: none}
+
 }
 
 /*

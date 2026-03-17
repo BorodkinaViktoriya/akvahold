@@ -16,7 +16,7 @@ export const ImageTextChess = () => {
           <div className={styles.imageWrapper}>
             <Image
               src={item.image}
-              alt={item.title}
+              alt={item.alt}
               width={760}
               height={860}
             />

@@ -10,6 +10,7 @@ interface SliderLeftProps {
     title: { strong: string; normal: string; };
     description: string[];
     image: string;
+    alt: string[];
   }[];
 }
 
@@ -114,7 +115,7 @@ export default function SliderLeft({ details }: SliderLeftProps) {
           ))}
         </div>
         <div className={styles.image_container} key={activeIndex}>
-          <Image alt={currentSlide.title}
+          <Image  alt={`${currentSlide.title.strong} ${currentSlide.title.normal}`}
                  className={styles.imageFade}
                  fill src={currentSlide.image}
                  style={{objectFit: "cover"}}/>

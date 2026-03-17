@@ -7,6 +7,7 @@ type models = {
   id: number;
   title: string;
   image: string;
+  alt: string;
   price: string;
   pdf: string;
   info: { value: string; unit: string; label: string }[];
@@ -17,6 +18,7 @@ export const TubModels: models[] = [
     id: 1,
     title: "SPA",
     image: "images/kupeli/models/spa2.png",
+    alt: "Купель Good Line SPA цвет венге",
     price: "от 541 000 р",
     pdf: "./docs/prises/premium.pdf",
     info: [
@@ -56,6 +58,7 @@ export const TubModels: models[] = [
     id: 2,
     title: "Premium",
     image: "images/kupeli/models/premium2.png",
+    alt: "Купель Good Line Premium цвет венге",
     price: "от 550 000 р",
     pdf: "./docs/prises/premium.pdf",
     info: [
@@ -208,6 +211,7 @@ export const TubModels: models[] = [
     id: 3,
     title: "Electro",
     image: "images/kupeli/models/premium-e2.png",
+    alt: "Купель Good Line Electro цвет венге",
     price: "от 575 000 р",
     pdf: "./docs/prises/premium-e.pdf",
     info: [
@@ -305,7 +309,7 @@ export default function SliderModels() {
               className={`${styles.navigationButton} ${
                 index === activeIndex ? styles.navigationButton_active : ""
               }`}
-              aria-label={`Показать слайд ${index + 1}`}
+              aria-label={`Показать слайд с моделью ${slide.title}`}
               aria-current={index === activeIndex}
             >
               {slide.title}
@@ -313,7 +317,7 @@ export default function SliderModels() {
           ))}
         </div>
         <div className={styles.image_container} key={activeIndex}>
-          <Image alt="Слайд"
+          <Image alt={currentSlide.alt}
                  className={styles.imageFade}
                  fill
                  src={currentSlide.image}
@@ -321,9 +325,9 @@ export default function SliderModels() {
         </div>
         <div className={styles.actions}>
         <p className={styles.price} key={`price-${activeIndex}`}>{currentSlide.price}</p>
-          <button className={styles.consult}>получить консультацию
+          <button className={styles.consult} aria-label="получить консультацию" >получить консультацию
           </button>
-          <button className={styles.prices} onClick={() => window.open(asset(currentSlide.pdf), '_blank', 'noopener,noreferrer')}>прайс-лист
+          <button className={styles.prices} onClick={() => window.open(asset(currentSlide.pdf), '_blank', 'noopener,noreferrer')} aria-label="открыть прайс-лист">прайс-лист
           </button>
         </div>
 

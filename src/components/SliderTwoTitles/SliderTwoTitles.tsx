@@ -116,7 +116,7 @@ export default function SliderTwoTitles() {
           <Image alt={currentSlide.title}
                  className={styles.imageFade}
                  fill
-                 src={currentSlide.image}
+                 src={asset(currentSlide.image)}
           />
         </div>
         <p className={styles.info} >{currentSlide.info}</p>

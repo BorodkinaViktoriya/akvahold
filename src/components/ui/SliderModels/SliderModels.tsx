@@ -17,7 +17,7 @@ export const TubModels: models[] = [
   {
     id: 1,
     title: "SPA",
-    image: "images/kupeli/models/spa2.png",
+    image: "images/kupeli/models/spa.png",
     alt: "Купель Good Line SPA цвет венге",
     price: "от 541 000 р",
     pdf: "./docs/prises/premium.pdf",

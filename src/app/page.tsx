@@ -15,8 +15,10 @@ import SliderModels from "@/components/ui/SliderModels/SliderModels";
 import SliderTwoTitles from "@/components/SliderTwoTitles/SliderTwoTitles";
 import CardsSlider from "@/components/ui/CardsSlider/CardsSlider";
 import CardsRow from "@/components/ui/CardsRow/CardsRow";
+import Reviews from "@/components/Reviews/Reviews";
 import { details } from "@/lib/constants/kupeli_main";
 import { cards } from "@/lib/constants/kupeli_main";
+import { reviews } from "@/lib/constants/kupeli_main";
 import { buisness } from "@/lib/constants/kupeli_main";
 
 export default function Home() {
@@ -34,6 +36,8 @@ export default function Home() {
       <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} />
       <CardsRow cards={buisness} />
       <SliderTwoTitles />
+      <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />
+<Reviews reviews={reviews}/>
       <SectionTitle highlight="Реализованные" text="проекты" isDark={false} />
       <YandexMap/>
       <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />

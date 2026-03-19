@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { asset } from "@/lib/asset";
+import {asset} from "@/lib/asset";
 import {useState, useEffect, useRef} from "react";
 import styles from "./SliderTwoTitles.module.scss";
 
@@ -119,7 +119,7 @@ export default function SliderTwoTitles() {
                  src={asset(currentSlide.image)}
           />
         </div>
-        <p className={styles.info} >{currentSlide.info}</p>
+        <p className={styles.info}>{currentSlide.info}</p>
         <div className={styles.arrows}>
           <button
             type="button"
@@ -131,7 +131,7 @@ export default function SliderTwoTitles() {
               width="66"
               height="32"
               viewBox="0 0 66 32"
-              style={{ color: "white" }}
+              style={{color: "white"}}
             >
               <path
                 d="M9.89585 9L2 16M2 16L9.89585 23M2 16H64"
@@ -143,14 +143,14 @@ export default function SliderTwoTitles() {
           <button
             type="button"
             onClick={goNext}
-            className={`${styles.arrowButton} ${styles.arrowButton_right}`}
+            className={styles.arrowButton}
             aria-label="Следующий слайд"
           >
             <svg
               width="66"
               height="32"
               viewBox="0 0 66 32"
-              style={{ color: "white", transform: "rotate(180deg)" }}
+              style={{color: "white", transform: "rotate(180deg)"}}
             >
               <path
                 d="M9.89585 9L2 16M2 16L9.89585 23M2 16H64"
@@ -161,8 +161,6 @@ export default function SliderTwoTitles() {
           </button>
         </div>
       </div>
-
-
     </section>
   );
 }

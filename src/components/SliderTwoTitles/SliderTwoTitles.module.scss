@@ -15,8 +15,7 @@
   padding: 3.2vw 0 3.2vw 4vw; //TODO сверить паддинги с остальными блоками
   display: grid;
   grid-template-columns: 240px 1fr;
-  column-gap: 4vw;
-  row-gap: 1vw;
+  gap: 1vw 4vw;
   grid-template-areas:
     "description description"
     "title title"
@@ -135,6 +134,7 @@
   background: var(--white);
 }
 
+/* информация-описание внизу блока */
 .info {
 grid-area: info;
   max-width: 55%;
@@ -180,6 +180,11 @@ grid-area: info;
     min-height: min-content;
   }
 
+  .info {
+    max-width: 65%;
+    min-height: 4.8em;
+  }
+
   .arrows {
     padding: 0 20px;
   }
@@ -188,6 +193,18 @@ grid-area: info;
 
 @media (max-width: 1020px) {
 
+  .slide {
+    grid-template-columns: 270px 1fr;
+    grid-template-areas:
+    "description description"
+    "nav image"
+    "info info";
+    gap: 20px 25px;
+  }
+
+  .title {
+    display: none;
+  }
 
   .description {
     font-size: 18px;
@@ -195,6 +212,15 @@ grid-area: info;
 
   .navigation {
     gap: 15px;
+    min-width: 250px;
+  }
+
+  .image_container {
+    width: 100%
+  }
+
+  .navigationButton_active {
+    font-size: 20px;
   }
 
   .info {
@@ -207,11 +233,10 @@ grid-area: info;
 
 @media (max-width: 770px) {
   .slide {
-    grid-row-gap: 20px;
+    grid-row-gap: 30px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "description"
-      "title"
       "nav"
       "image"
       "info";
@@ -228,17 +253,22 @@ grid-area: info;
   }
 
   .info {
-    max-width: 90%
+    max-width: 90%;
+    min-height: 6em;
   }
 
 }
 
-/*
-@media (max-width: 480px) {
 
-
+@media (max-width: 550px) {
   .info {
-
+    min-height: 8.4em;
   }
 }
-*/ //TODO delete if nj need
+
+
+@media (max-width: 390px) {
+  .info {
+    min-height: 11.8em;
+  }
+}

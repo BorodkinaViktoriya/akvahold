@@ -10,7 +10,7 @@ interface SliderLeftProps {
     title: { strong: string; normal: string; };
     description: string[];
     image: string;
-    alt: string[];
+    alt: string;
   }[];
 }
 

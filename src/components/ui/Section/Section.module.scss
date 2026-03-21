@@ -1,0 +1,21 @@
+.section {
+  padding-top: clamp(70px, 5.2vw, 100px);
+}
+
+/* по умолчанию */
+.section_default {
+  background: transparent;
+  color: var(--color-text-dark);
+}
+
+/* тёмная */
+.section_brown {
+  background-color: var(--background-dark);
+  color:var(--white);
+  }
+
+/* светлая (если нужно) */
+.section_gray {
+  background-color: var(--color-text-dark);
+  color: var(--white);
+}

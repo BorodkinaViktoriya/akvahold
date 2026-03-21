@@ -56,6 +56,7 @@ export default function SliderLeft({ details }: SliderLeftProps) {
 
       <div
         className={styles.slide}
+        aria-live="polite" aria-atomic="true"
       >
 
         <div className={styles.arrows}>

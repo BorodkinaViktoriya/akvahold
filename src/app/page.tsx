@@ -6,38 +6,62 @@ export const metadata = {
 };
 
 import styles from "./page.module.css";
+import Section from "@/components/ui/Section/Section";
 import SimpleSlider from "@/components/SimpleSliderTest/SimpleSlider";
-import Hero from "@/components/Hero/Hero";
-import {ImageTextChess} from "@/components/ui/ImageTextChess/ImageTextChess";
-import SliderLeft from "@/components/ui/SliderLeft/SliderLeft";
+import Hero from "@/widgets/Hero/Hero";
+import {ImageTextChess} from "@/widgets/ImageTextChess/ImageTextChess";
+import SliderLeft from "@/widgets/SliderLeft/SliderLeft";
 import YandexMap from "@/components/YandexMap/YandexMapClient";
-import SliderModels from "@/components/ui/SliderModels/SliderModels";
-import SliderTwoTitles from "@/components/SliderTwoTitles/SliderTwoTitles";
-import CardsSlider from "@/components/ui/CardsSlider/CardsSlider";
-import CardsRow from "@/components/ui/CardsRow/CardsRow";
-import Reviews from "@/components/Reviews/Reviews";
+import SliderModels from "@/widgets/SliderModels/SliderModels";
+import SliderTwoTitles from "@/widgets/SliderTwoTitles/SliderTwoTitles";
+import CardsSlider from "@/widgets/CardsSlider/CardsSlider";
+import CardsRow from "@/widgets/CardsRow/CardsRow";
+import Reviews from "@/widgets/Reviews/Reviews";
 import { details } from "@/lib/constants/kupeli_main";
 import { cards } from "@/lib/constants/kupeli_main";
 import { reviews } from "@/lib/constants/kupeli_main";
 import { buisness } from "@/lib/constants/kupeli_main";
 
+
 export default function Home() {
   return (
     <main className={styles.main}>
       <Hero/>
-      <SectionTitle highlight="SPA-зона" text="в любое время года" isDark={false}/>
-      <ImageTextChess />
-      <SectionTitle highlight="Good Line - качество" text="в каждой детали" isDark={false} />
-      <SliderLeft details={details}/>
-      <SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха" isDark={true} />
-      <SliderModels/>
-      <SectionTitle highlight="Широкие возможности" text="оснащения купелей" isDark={false} />
-      <CardsSlider cards={cards}/>
-      <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} />
-      <CardsRow cards={buisness} />
+      <Section
+        title={<SectionTitle highlight="SPA-зона" text="в любое время года"/>}
+      >
+        <ImageTextChess />
+      </Section>
+      <Section
+        title={<SectionTitle highlight="Good Line - качество" text="в каждой детали"/>}
+      >
+        <SliderLeft details={details}/>
+      </Section>
+      <Section
+        title={ <SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха"/>}
+        variant={"brown"}
+      >
+          <SliderModels/>
+      </Section>
+      <Section
+        title={  <SectionTitle highlight="Широкие возможности" text="оснащения купелей"/> }
+      >
+        <CardsSlider cards={cards}/>
+      </Section>
+
+      <Section
+        title={ <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} /> }
+      >
+        <CardsRow cards={buisness} />
+      </Section>
+      //Секция-слайдер не стандарт
       <SliderTwoTitles />
-      <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />
-<Reviews reviews={reviews}/>
+      <Section
+        title={ <SectionTitle highlight="Нам доверяют" text=" " isDark={false} /> }
+      >
+        <Reviews reviews={reviews}/>
+      </Section>
+
       <SectionTitle highlight="Реализованные" text="проекты" isDark={false} />
       <YandexMap/>
       <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />

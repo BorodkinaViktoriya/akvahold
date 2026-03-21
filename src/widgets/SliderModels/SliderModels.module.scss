@@ -10,7 +10,8 @@
       #5B5048 40%,
       #5B5048 100%
   );
-  margin-top: -2px;
+  transform: translateY(2px); // Нужен для того, что бы нижний слой темного фона секции не просвечивался
+  will-change: transform;
 }
 
 .slide {

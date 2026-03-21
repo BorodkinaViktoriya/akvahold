@@ -1,6 +1,5 @@
 .slider {
   width: 100%;
-  min-height: calc(100vh - 100px);
   position: relative;
   overflow: hidden;
 }
@@ -8,7 +7,7 @@
 .slide {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: calc(90vh - 100px);
   width: 100%;
   padding-left: 4vw; //TODO сверить паддинги с остальными блоками
   display: grid;
@@ -93,7 +92,6 @@
 /* Левые кнопки-переключатели */
 .navigation {
   grid-area: nav;
-
   margin-top: auto;
   font-size: 0;
   display: flex;

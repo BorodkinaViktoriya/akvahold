@@ -7,7 +7,8 @@
   display: grid;
   grid-template-columns: 47% 1fr;
   margin: 0 auto 2%;
-  gap: 9%
+  gap: 9%;
+  align-items: center;
 }
 
 .featureBlock:last-child {
@@ -20,11 +21,12 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  align-self: center;
 }
 
 .imageWrapper img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
 }

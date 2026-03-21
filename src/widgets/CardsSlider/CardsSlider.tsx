@@ -102,7 +102,7 @@ return (
           height={32}
           style={{ objectFit: 'contain' }}
           src={"images/arrow.svg"}
-          alt="arrow"
+          alt=""
         />
       </button>
       <button
@@ -116,14 +116,15 @@ return (
           height={32}
           style={{ objectFit: 'contain' }}
           src={"images/arrow.svg"}
-          alt="arrow"
+          alt=""
         />
       </button>
     </div>
-    <div className={styles.viewport} ref={viewportRef}>
+    <ul className={styles.viewport} ref={viewportRef}>
 
         {cards.map((card, i ) => (
-          <div key={card.id} className={styles.card} ref={i === 0 ? firstCardRef : null} >
+          <li key={card.id}>
+          <article  className={styles.card} ref={i === 0 ? firstCardRef : undefined} >
             <div className={styles.imageWrapper}>
               <Image
                 src={asset(card.image)}
@@ -135,9 +136,10 @@ return (
 
             <h5 className={styles.title}>{card.title}</h5>
             <p className={styles.text}>{card.text}</p>
-          </div>
+          </article>
+          </li>
         ))}
-      </div>
+      </ul>
 
   </div>
 );

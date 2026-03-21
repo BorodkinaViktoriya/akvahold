@@ -7,7 +7,7 @@ export const ImageTextChess = () => {
   return (
     <div className={styles.list}>
       {items.map((item: FeatureItem, index: number) => (
-        <section
+        <article
           key={index}
           className={`${styles.featureBlock} ${
             index % 2 === 1 ? styles.reverse : ""
@@ -28,10 +28,9 @@ export const ImageTextChess = () => {
               <p key={i}>{paragraph}</p>
             ))}
           </div>
-        </section>
+        </article>
       ))}
     </div>
   )
 }
 
-export default ImageTextChess

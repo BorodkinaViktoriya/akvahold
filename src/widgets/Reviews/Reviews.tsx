@@ -15,23 +15,25 @@ interface ReviewsProps {
 export default function Reviews({reviews}: ReviewsProps) {
   return (
     <section className={styles.section} >
-      <div
+      <ul
         className={styles.row} >
-        { reviews.map((card , index) => (
-          <div className={styles.row__card} key={index} >
+        { reviews.map((review , index) => (
+          <li key={index}>
+          <article className={styles.review}  >
             <h5 className={styles.row__title}>
-              {card.title}
+              {review.title}
             </h5>
             <p className={styles.row__text}>
-              {card.text}
+              {review.text}
             </p>
             <p className={styles.row__number}>
-              {card.value}
+              {review.value}
             </p>
-          </div>
+          </article>
+          </li>
         ))
         }
-      </div>
+      </ul>
       <button className={styles.row__button}>Узнать подробнее</button>
     </section>
   )

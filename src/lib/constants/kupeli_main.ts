@@ -299,7 +299,7 @@ export const buisness = [
 
 // массив для страницы с отзывами
 
-export const кeviews = [
+export const reviews = [
   {
     img: "/images/kupeli/features/f7.jpg",
     position : "Звезды",

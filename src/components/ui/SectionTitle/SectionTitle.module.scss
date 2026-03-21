@@ -1,18 +1,8 @@
-.section__wrapper {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding-top: clamp(70px, 5.2vw, 100px);
-  padding-bottom: clamp(30px, 3.125vw, 60px);
-}
-
-.section__wrapper_dark {
-  background-color: #5B5048;
-  color: white;
-}
 .section__title {
   text-align: center;
   letter-spacing: 0.13em;
+  margin-top: 0;
+  margin-bottom: clamp(30px, 3.125vw, 60px);
 }
 
 .section__title span {

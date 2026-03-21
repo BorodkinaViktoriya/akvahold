@@ -92,6 +92,7 @@ export default function SliderTwoTitles() {
     <section className={styles.slider}>
       <div
         className={styles.slide}
+        aria-live="polite" aria-atomic="true"
       >
         <p className={styles.description}>конструктивное превосходство</p>
         <h2 className={styles.title}>{currentSlide.title}</h2>

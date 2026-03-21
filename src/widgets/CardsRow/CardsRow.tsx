@@ -13,10 +13,11 @@ interface CardsRowProps {
 export default function CardsRow({cards}: CardsRowProps) {
   return (
     <section className={styles.section} >
-      <div
+      <ul
         className={styles.row} >
       { cards.map((card , index) => (
-        <div className={styles.row__card} key={index} >
+        <li className={styles.row__card}key={index} >
+        <article  >
           <h5 className={styles.row__title}>
             {card.title}
           </h5>
@@ -26,10 +27,11 @@ export default function CardsRow({cards}: CardsRowProps) {
           <p className={styles.row__number}>
             {card.value}
           </p>
-        </div>
+        </article>
+          </li>
       ))
       }
-      </div>
+      </ul>
       <button className={styles.row__button}>Узнать подробнее</button>
     </section>
   )

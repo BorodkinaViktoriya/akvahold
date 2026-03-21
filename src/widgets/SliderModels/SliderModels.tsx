@@ -294,9 +294,10 @@ export default function SliderModels() {
 
 
   return (
-    <section className={styles.slider}>
+    <div className={styles.slider}>
       <div
         className={styles.slide}
+        aria-live="polite" aria-atomic="true"
       >
         <p className={styles.description}>модельный ряд</p>
 
@@ -340,7 +341,7 @@ export default function SliderModels() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

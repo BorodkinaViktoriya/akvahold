@@ -18,9 +18,9 @@ export default function CardsRow({cards}: CardsRowProps) {
       { cards.map((card , index) => (
         <li className={styles.row__card}key={index} >
         <article  >
-          <h5 className={styles.row__title}>
+          <h2 className={styles.row__title}>
             {card.title}
-          </h5>
+          </h2>
           <p className={styles.row__text}>
             {card.text}
           </p>

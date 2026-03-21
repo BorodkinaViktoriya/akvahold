@@ -7,8 +7,8 @@ import { Card } from "@/lib/constants/kupeli_main";
 
 export default function CardsSlider({ cards }: { cards: Card[] }) {
 
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const firstCardRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLUListElement>(null);
+  const firstCardRef = useRef<HTMLLIElement>(null);
 
   const [step, setStep] = useState(0);
 
@@ -123,8 +123,8 @@ return (
     <ul className={styles.viewport} ref={viewportRef}>
 
         {cards.map((card, i ) => (
-          <li key={card.id}>
-          <article  className={styles.card} ref={i === 0 ? firstCardRef : undefined} >
+          <li  className={styles.card} key={card.id} ref={i === 0 ? firstCardRef : undefined}>
+          <article   >
             <div className={styles.imageWrapper}>
               <Image
                 src={asset(card.image)}
@@ -134,7 +134,7 @@ return (
               />
             </div>
 
-            <h5 className={styles.title}>{card.title}</h5>
+            <h3 className={styles.title}>{card.title}</h3>
             <p className={styles.text}>{card.text}</p>
           </article>
           </li>

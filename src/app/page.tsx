@@ -50,21 +50,21 @@ export default function Home() {
       </Section>
 
       <Section
-        title={ <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов" isDark={false} /> }
+        title={ <SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов"/> }
       >
         <CardsRow cards={buisness} />
       </Section>
       //Секция-слайдер не стандарт
       <SliderTwoTitles />
       <Section
-        title={ <SectionTitle highlight="Нам доверяют" text=" " isDark={false} /> }
+        title={ <SectionTitle highlight="Нам доверяют" text=" "/> }
       >
         <Reviews reviews={reviews}/>
       </Section>
 
-      <SectionTitle highlight="Реализованные" text="проекты" isDark={false} />
+      <SectionTitle highlight="Реализованные" text="проекты"  />
       <YandexMap/>
-      <SectionTitle highlight="Нам доверяют" text=" " isDark={false} />
+      <SectionTitle highlight="Нам доверяют" text=" "  />
       <SimpleSlider/>
     </main>
   );

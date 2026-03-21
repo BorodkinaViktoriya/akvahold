@@ -2,6 +2,8 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  transform: translateY(1px); // Нужен для того, что бы нижний слой темного фона секции не просвечивался
+  will-change: transform;
 }
 
 .slide {
@@ -61,6 +63,8 @@
 }
 
 .title {
+  font-size: var(--fs-heading32);
+  line-height: 1.2;
   grid-area: title;
   font-weight: 600;
   margin-bottom: 1.5vw;

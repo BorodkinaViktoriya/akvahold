@@ -89,10 +89,10 @@ export default function SliderLeft({ details }: SliderLeftProps) {
             />
           </button>
         </div>
-        <h4 className={styles.title}>
+        <h3 className={styles.title}>
           {currentSlide.title.strong}
           <span className={styles.subtitle}>{currentSlide.title.normal}</span>
-        </h4>
+        </h3>
         <div className={styles.description}>
           {currentSlide.description.map((d, index) => (
             <p key={index}>{d}</p>

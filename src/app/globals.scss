@@ -30,11 +30,11 @@ $base-path: "";
 }
 
 :root {
-  --fs-h1: clamp(50px, 3.0625vw + 40.2px, 99px);
-  --fs-h2: clamp(24px, 2.25vw + 16.8px, 60px);
-  --fs-h3: clamp(20px, 1.25vw + 16px, 40px);
-  --fs-h4: clamp(18px, 0.875vw + 15.2px, 32px);
-  --fs-h5: clamp(18px, 0.375vw + 16.8px, 24px);
+  --fs-heading1: clamp(50px, 3.0625vw + 40.2px, 99px);
+  --fs-heading2: clamp(24px, 2.25vw + 16.8px, 60px);
+  --fs-heading40: clamp(20px, 1.25vw + 16px, 40px);
+  --fs-heading32: clamp(18px, 0.875vw + 15.2px, 32px);
+  --fs-heading24: clamp(18px, 0.375vw + 16.8px, 24px);
   --fw-regular: 400;
   --fw-semi: 600;
 
@@ -74,28 +74,11 @@ a {
 }
 
 h1 {
-  //font-size: clamp(2.2rem, 3.3vw, 3.75rem);
   font-weight: 600;
 }
 
 h2 {
-  font-size: var(--fs-h2);
   font-weight: 400;
-}
-
-h3 {
-  font-size: var(--fs-h3);
-  line-height: 120%;
-}
-
-h4 {
-  font-size: var(--fs-h4);
-  line-height: 120%;
-}
-
-h5 {
-  font-size: var(--fs-h5);
-  line-height: 120%;
 }
 
 button {

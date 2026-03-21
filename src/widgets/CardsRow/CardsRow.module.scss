@@ -23,13 +23,11 @@ width: 100%;
 }
 
 .row__title {
+  font-size: var(--fs-heading24);
+  font-weight: var(--fw-semi);
   margin-bottom: 1.2vw;
   letter-spacing: 0.05em;
   min-height: 2.4em;
-}
-
-.row__text {
-
 }
 
 .row__number {
@@ -56,20 +54,13 @@ width: 100%;
   border: none;
 }
 
-@media (max-width: 1348px) {
+@media (max-width: 1505px) {
   .row__title {
     min-height: 3.6em;
   }
 }
 
-
-@media (max-width: 1181px) {
-  .row__title {
-    min-height: 4.8em;
-  }
-}
-
-@media (max-width: 1181px) {
+@media (max-width: 1317px) {
   .row__title {
     min-height: 4.8em;
   }

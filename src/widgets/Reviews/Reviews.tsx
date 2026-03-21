@@ -20,7 +20,7 @@ export default function Reviews({reviews}: ReviewsProps) {
         { reviews.map((review , index) => (
           <li key={index}>
           <article className={styles.review}  >
-            <h5 className={styles.row__title}>
+           {/* <h5 className={styles.row__title}>
               {review.title}
             </h5>
             <p className={styles.row__text}>
@@ -28,7 +28,7 @@ export default function Reviews({reviews}: ReviewsProps) {
             </p>
             <p className={styles.row__number}>
               {review.value}
-            </p>
+            </p>*/}
           </article>
           </li>
         ))

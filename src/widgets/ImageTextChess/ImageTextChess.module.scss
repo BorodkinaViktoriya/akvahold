@@ -40,7 +40,7 @@
 
 .chess__title {
   white-space: pre-line;
-  /*font-size: clamp(20px, 2.08vw, 40px);*/
+  font-size: var(--fs-heading40);
   max-width: 86%;;
   font-weight: var(--fw-semi);
   margin-bottom: 2%;

@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./globals.scss";
 import {Header} from "@/components/Header/Header";
 import {Footer} from "@/components/Footer/Footer";
-import type { Viewport } from 'next'
+import type {Viewport} from 'next'
 
 export const viewport: Viewport = {
   themeColor: '#cdc5bf', // Цвет верхней полоски в мобильных браузерах
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
 }; //TODO отредактировать метадату для сео на каждой странице
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="ru">
-      <body >
-      <Header />
-        {children}
-      <Footer />
-      </body>
+    <body>
+    <Header/>
+    {children}
+    <Footer/>
+    </body>
     </html>
   );
 }

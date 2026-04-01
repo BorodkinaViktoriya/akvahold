@@ -3,6 +3,7 @@
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 import { asset } from "@/lib/asset";
+import Button from "@/components/ui/Button/Button";
 
 export default function Hero() {
 
@@ -20,24 +21,31 @@ export default function Hero() {
           src={asset("/images/kupeli/kupeliHero.jpg")}
           fill
           alt=" Премиальная деревянная купель Good Line на улице зимой с подсветкой, окруженная заснеженными деревьями."
-          className={styles.img}
+          className={styles.hero__img}
           priority
         />
       </picture>
       <div className={styles.hero__banner}>
         <h1 className={styles.hero__title}>Good Line</h1>
-        <h5 className={styles.hero__subtitle}>
-          <span>Премиальные</span>
+        <h2 className={styles.hero__subtitle}>
+
+         <span>Производим</span>
+          <span>премиальные купели</span>
+
+          <span>для круглогодичного отдыха</span>
+
+        {/*  <span>Премиальные</span>
           <span>горячие купели</span>
-          <span>для дома и бизнеса</span>
-        </h5>
-        <button
-          type="button"
-          /*onClick={}*/
+          <span>для дома и бизнеса</span>*/}
+        </h2>
+        <Button
+          variant="default"
+          heightClass="big"
           className={styles.hero__button}
-          aria-label="Получить консультацию"
-        > Получить консультацию
-        </button>
+          ariaLabel="Получить консультацию"
+        >Получить консультацию
+        </Button>
+
       </div>
     </section>
   );

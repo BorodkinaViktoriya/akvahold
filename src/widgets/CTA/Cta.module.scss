@@ -1,0 +1,96 @@
+.cta {
+  display: grid;
+  grid-template-columns: 50vw 1fr;
+  min-height: 400px;
+  padding-top: clamp(70px, 5.2vw, 100px);
+}
+
+/* Изображение слева */
+.cta__image {
+  aspect-ratio: 1.7/1;
+  position: relative;
+  align-self: center;
+}
+
+/*  Правая часть */
+.cta_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 18%;
+  row-gap:clamp(20px, calc(14px + 1.875vw), 50px);
+}
+
+/*  Заголовок */
+.cta_title {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-heading40);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.cta_title strong {
+  font-weight: 700;
+}
+
+/*  Смещение второй строки */
+.cta_title_offset {
+  margin-left: 15%;
+  font-weight: 400;
+}
+
+/* 📄 Текст */
+.cta_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  font-size:  var(--fs-heading18);
+  line-height: 1.4;
+
+}
+
+/* 🔘 Кнопка */
+.cta_button {
+  align-self: flex-start;
+  font-size: 16px;
+  min-width: 400px;
+}
+
+@media (max-width: 1700px) {
+  .cta_content {
+    padding: 0 10%;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .cta_button {
+    min-width: 350px;
+  }
+}
+@media (max-width: 900px) {
+  .cta {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+
+  .cta_button {
+    align-self: center;
+    width: 50%;
+  }
+
+}
+@media (max-width: 691px) {
+.cta_button {
+  width: 100%;
+  margin-top: 30px;
+}
+}
+
+
+@media (max-width: 600px) {
+  .cta_content {
+    padding: 0 20px;
+  }
+}

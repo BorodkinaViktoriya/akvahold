@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./CardsRow.module.scss"
+import Button from "@/components/ui/Button/Button";
 
 interface CardsRowProps {
   cards: {
@@ -12,7 +13,7 @@ interface CardsRowProps {
 
 export default function CardsRow({cards}: CardsRowProps) {
   return (
-    <section className={styles.section} >
+    <div className={styles.section} >
       <ul
         className={styles.row} >
       { cards.map((card , index) => (
@@ -21,7 +22,7 @@ export default function CardsRow({cards}: CardsRowProps) {
           <h2 className={styles.row__title}>
             {card.title}
           </h2>
-          <p className={styles.row__text}>
+          <p >
             {card.text}
           </p>
           <p className={styles.row__number}>
@@ -32,7 +33,13 @@ export default function CardsRow({cards}: CardsRowProps) {
       ))
       }
       </ul>
-      <button className={styles.row__button}>Узнать подробнее</button>
-    </section>
+      <Button
+        variant="default"
+        heightClass="big"
+        className={styles.row__button}
+        ariaLabel="Узнать подробнее"
+      >Узнать подробнее
+      </Button>
+    </div>
   )
 }

@@ -254,6 +254,7 @@ export const TubModels: models[] = [
 import {useState, useEffect, useRef} from "react";
 import styles from "./SliderModels.module.scss";
 import {allowedDisplayValues} from "next/dist/compiled/@next/font/dist/constants";
+import Button from "@/components/ui/Button/Button";
 /*import {slides} from "@/lib/constants/kupeli_main";*/
 
 export default function SliderModels() {
@@ -303,6 +304,7 @@ export default function SliderModels() {
 
         <div ref={navRef} className={styles.navigation}>
           {TubModels.map((slide, index) => (
+
             <button
               key={slide.id}
               type="button"
@@ -326,10 +328,23 @@ export default function SliderModels() {
         </div>
         <div className={styles.actions}>
         <p className={styles.price} key={`price-${activeIndex}`}>{currentSlide.price}</p>
-          <button className={styles.consult} aria-label="получить консультацию" >получить консультацию
-          </button>
-          <button className={styles.prices} onClick={() => window.open(asset(currentSlide.pdf), '_blank', 'noopener,noreferrer')} aria-label="открыть прайс-лист">прайс-лист
-          </button>
+          <div className={styles.actions__buttons}>
+          <Button
+            variant="default"
+            heightClass="small"
+            ariaLabel="Получить консультацию"
+            className={styles.actions__button}
+          >получить консультацию
+          </Button>
+          <Button
+            variant="light"
+            heightClass="small"
+            aria-label="открыть прайс-лист"
+            className={styles.actions__button}
+            onClick={() => window.open(asset(currentSlide.pdf), '_blank', 'noopener,noreferrer')}
+          >прайс-лист
+          </Button>
+          </div>
         </div>
 
         <div className={styles.info} key={`info-${activeIndex}`}>

@@ -1,0 +1,45 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  padding: 0 20px;
+
+  &.small {
+    background-color: var(--button-color);
+    min-height: 50px;
+
+    @media (max-width: 1024px) {
+      min-height: 45px;
+    }
+  }
+
+  &.big {
+    background-color: var(--button-color);
+    min-height: 60px;
+
+    @media (max-width: 1024px) {
+      min-height: 50px;
+    }
+
+    @media (max-width: 630px) {
+      min-height: 45px;
+    }
+  }
+
+// Варианты цветов
+
+&.default {
+  background-color: var(--button-color);
+  color: var(--white);
+}
+
+&.light {
+  background-color: #fff3;
+  color: var(--white);
+}
+
+}

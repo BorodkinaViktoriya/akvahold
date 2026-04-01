@@ -19,7 +19,7 @@
   position: relative;
   min-height: 60vh;
   width: 100%;
-  padding: 0 4vw; //TODO сверить паддинги с остальными блоками
+  padding: 0 4vw;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
@@ -134,36 +134,27 @@
   align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 45px;
 }
 
 .price {
   font-size: 24px;
   letter-spacing: 0.12em;
-  margin-bottom: 30px;
   min-width: 255px;
   font-weight: var(--fw-semi);
   animation: fadeIn 0.6s ease-out forwards;
 }
 
-.consult {
-  min-width: 245px;
-  min-height: 50px;
-  background-color: var(--button-color);
-  color: var(--white);
-  font-weight: var(--fw-semi);
-  font-size: 16px;
-  border: none;
+.actions__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.prices {
+.actions__button {
   min-width: 245px;
-  min-height: 50px;
-  background-color: #fff3;
-  color: var(--white);
   font-weight: var(--fw-semi);
   font-size: 16px;
-  border: none;
 }
 
 .info {
@@ -182,8 +173,7 @@
 }
 
 .value {
-  font-size: var(--fs-h4);
-
+  font-size: var(--fs-heading32);
 }
 
 .unit {
@@ -212,13 +202,8 @@
     min-width: 170px;
   }
 
-  .consult {
-    min-width: 200px;
-    min-height: 45px;
-    font-size: 14px;
-  }
-  .prices {
-    min-width: 200px;
+  .actions__button {
+    min-width: 240px;
     min-height: 45px;
     font-size: 14px;
   }
@@ -237,7 +222,12 @@
       "nav image"
       "price price"
       "info info"
-      "consult prices";
+      "actions__buttons actions__buttons";
+  }
+
+  .actions__buttons {
+    grid-area: actions__buttons;
+    flex-direction: row;
   }
 
   .description {
@@ -261,16 +251,6 @@
   .price {
     grid-area: price;
     margin-bottom: 20px;
-  }
-
-  .consult {
-    grid-area: consult;
-  }
-
-  .prices {
-    grid-area: prices;
-    justify-self: start;
-    margin-left: 15px;
   }
 
   .info {
@@ -303,7 +283,7 @@
       "image image"
       "price price"
       "info info"
-      "consult prices";
+      "actions__buttons actions__buttons";
   }
 
   .navigation {
@@ -320,14 +300,6 @@
     margin: 0 -20px;
   }
 
-  .consult {
-    justify-self: start;
-  }
-
-  .prices {
-    margin-left: 20px;
-  }
-
   .info {
     width: 100%;
     grid-template-columns: repeat(auto-fit, 120px);
@@ -335,7 +307,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 535px) {
   .slide {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -344,18 +316,11 @@
       "image"
       "price"
       "info"
-      "consult"
-      "prices";
+      "actions__buttons";
   }
 
-  .consult {
-    grid-area: consult;
-  }
-
-  .prices {
-    grid-area: prices;
-    justify-self: start;
-    margin: 20px 0 0 0;
+  .actions__buttons {
+    flex-direction: column;
   }
 
   .info {

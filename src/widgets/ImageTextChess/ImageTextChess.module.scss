@@ -43,13 +43,14 @@
   font-size: var(--fs-heading40);
   max-width: 86%;;
   font-weight: var(--fw-semi);
-  margin-bottom: 2%;
+  margin-bottom: 1.2em;
 }
 
 .content p {
   max-width: 86%;
   line-height: 1.4;
   letter-spacing: 0.05em;
+  white-space: pre-line;
 }
 
 .content p:not(:last-child) {
@@ -69,12 +70,7 @@
   .content p {
     max-width: unset;
   }
-
-  .chess__title {
-    margin-bottom: 3%;
   }
-
-}
 
 @media (max-width: 770px) {
   .list {
@@ -88,14 +84,14 @@
   }
 
   .content {
-    padding: 0 20px; //TODO  проверить остальные отступы
+    padding: 0 20px;
     margin-bottom: 40px;
   }
 
   .chess__title {
     white-space: pre-line;
     max-width: 86%;;
-    margin-bottom: 40px; //TODO можно пересчитать все отступы c clamp
+    margin-bottom: 40px;
   }
 }
 

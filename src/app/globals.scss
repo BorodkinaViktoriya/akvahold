@@ -35,17 +35,12 @@ $base-path: "";
   --fs-heading40: clamp(20px, 1.25vw + 16px, 40px);
   --fs-heading32: clamp(18px, 0.875vw + 15.2px, 32px);
   --fs-heading24: clamp(18px, 0.375vw + 16.8px, 24px);
+  --fs-heading18: clamp(14px, calc(13.2px + 0.25vw), 18px);
   --fw-regular: 400;
   --fw-semi: 600;
-
   --textDColor: #232323;
   --buttonColor:#024e6b;
 }
-/*
-h1 { font-size: var(--fs-h1); }
-h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
-h4 { font-size: var(--fs-h4); }*/
 
 html {
   font-size: 16px;

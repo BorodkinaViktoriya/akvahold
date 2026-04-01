@@ -23,7 +23,6 @@ export const Header: React.FC = () => {
             width={100}
             height={40}
             style={{objectFit: 'contain'}}/>
-          {/*<img src={"images/logo.png"} alt="Good Line" />*/} // TODO remove
         </a>
 
         <nav className={styles.nav} aria-label="Основная навигация">

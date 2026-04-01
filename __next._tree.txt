@@ -1,3 +1,3 @@
 :HL["/akvahold/_next/static/chunks/0i5k027g5uei7.css","style"]
-:HL["/akvahold/_next/static/chunks/0ebo6so0fe5lq.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"xYGimrn9gcw17KEDnunrE"}
+:HL["/akvahold/_next/static/chunks/0ovpt..oig.bx.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"bqSXcaFzJHFkjOoRifcpL"}

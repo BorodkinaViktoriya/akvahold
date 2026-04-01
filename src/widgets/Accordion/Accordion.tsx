@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import {useState} from 'react';
 import clsx from 'clsx';
 import styles from './Accordion.module.scss';
 
@@ -13,7 +13,7 @@ interface AccordionProps {
   items: Item[];
 }
 
-const Accordion = ({ items }: AccordionProps) => {
+ const Accordion = ({items}: AccordionProps) => {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
   const toggle = (index: number) => {
@@ -25,7 +25,7 @@ const Accordion = ({ items }: AccordionProps) => {
   };
 
   return (
-    <div className={styles.accordion}>
+    <div className={styles.accordion} id="faq">
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
 
@@ -65,7 +65,7 @@ const Accordion = ({ items }: AccordionProps) => {
             >
               <div className={styles.inner}>
                 {item.answer.map((text, i) => (
-                  <p key={i} className={styles.text}>
+                  <p key={i} >
                     {text}
                   </p>
                 ))}

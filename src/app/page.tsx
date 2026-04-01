@@ -29,6 +29,7 @@ export default function Home() {
     <main className={styles.main}>
       <Hero/>
       <Section
+        id="models"
         title={<SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха"/>}
         variant={"brown"}
       >
@@ -70,6 +71,7 @@ export default function Home() {
       </Section>
       <Cta/>
       <Section
+        id="faq"
         title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line"/>}
       >
         <Accordion items={questions}/>

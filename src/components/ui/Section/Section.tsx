@@ -2,6 +2,7 @@ import styles from "./Section.module.scss";
 import clsx from "clsx";
 
 type SectionProps = {
+  id?: string;
   title?: React.ReactNode;
   children: React.ReactNode;
   variant?: "default" | "brown" | "gray";
@@ -9,13 +10,15 @@ type SectionProps = {
 };
 
 export default function Section({
-                          title,
-                          children,
-                          variant = "default",
-                          className,
-                        }: SectionProps) {
+                                  id,
+                                  title,
+                                  children,
+                                  variant = "default",
+                                  className,
+                                }: SectionProps) {
   return (
     <section
+      id={id}
       className={clsx(
         styles.section,
         styles[`section_${variant}`],
@@ -23,7 +26,7 @@ export default function Section({
       )}
     >
       {title}
-        {children}
+      {children}
     </section>
   );
 }

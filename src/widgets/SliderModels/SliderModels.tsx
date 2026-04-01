@@ -94,119 +94,7 @@ export const TubModels: models[] = [
       }
     ]
   },
-  /*,
-  {
-    id: 3,
-    title: "BOOST",
-    image: "images/kupeli/models/boost.png",
-    price: "от 500 000 р",
-    info: [
-      {
-        value: "35",
-        unit: "КВт",
-        label: "мощность печи",
-      },
-      {
-        value: "2-3",
-        unit: "часа",
-        label: "время нагрева",
-      },
-      {
-        value: "4-6",
-        unit: "мест",
-        label: "вместимость",
-      },
-      {
-        value: "2",
-        unit: " ",
-        label: "типоразмера",
-      },
-      {
-        value: "3",
-        unit: " ",
-        label: "базовых цвета",
-      },
-      {
-        value: "1100",
-        unit: "мм",
-        label: "глубина чаши",
-      }
-    ]
-  },*/ /*{
-    id: 4,
-    title: "Quadro",
-    image: "images/kupeli/models/quadro.png",
-    price: "от 580 000 р",
-    info: [
-      {
-        value: "70",
-        unit: "КВт",
-        label: "мощность печи",
-      },
-      {
-        value: "3-4",
-        unit: "часа",
-        label: "время нагрева",
-      },
-      {
-        value: "6",
-        unit: "мест",
-        label: "вместимость",
-      },
-      {
-        value: "1",
-        unit: " ",
-        label: "типоразмера",
-      },
-      {
-        value: "3",
-        unit: " ",
-        label: "базовых цвета",
-      },
-      {
-        value: "1100",
-        unit: "мм",
-        label: "глубина чаши",
-      }
-    ]
-  }, *//*{
-    id: 5,
-    title: "Kids",
-    image: "images/kupeli/models/kids.png",
-    price: "от 520 000 р",
-    info: [
-      {
-        value: "45",
-        unit: "КВт",
-        label: "мощность печи",
-      },
-      {
-        value: "2-3",
-        unit: "часа",
-        label: "время нагрева",
-      },
-      {
-        value: "4-6",
-        unit: "мест",
-        label: "вместимость",
-      },
-      {
-        value: "2",
-        unit: " ",
-        label: "типоразмера",
-      },
-      {
-        value: "3",
-        unit: " ",
-        label: "базовых цвета",
-      },
-      {
-        value: "750",
-        unit: "мм",
-        label: "глубина чаши",
-      }
-    ]
-  },*/
+
   {
     id: 3,
     title: "Electro",
@@ -295,7 +183,7 @@ export default function SliderModels() {
 
 
   return (
-    <div className={styles.slider}>
+    <div className={styles.slider} >
       <div
         className={styles.slide}
         aria-live="polite" aria-atomic="true"

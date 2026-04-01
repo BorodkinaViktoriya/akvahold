@@ -17,10 +17,10 @@ import CardsSlider from "@/widgets/CardsSlider/CardsSlider";
 import CardsRow from "@/widgets/CardsRow/CardsRow";
 import Reviews from "@/widgets/Reviews/Reviews";
 import Cta from "@/widgets/CTA/Cta";
-import {details} from "@/lib/constants/kupeli_main";
-import {cards} from "@/lib/constants/kupeli_main";
+import {details, cards, questions} from "@/lib/constants/kupeli_main";
 import {feedbacks} from "@/lib/constants/kupeli_main";
 import {buisness} from "@/lib/constants/kupeli_main";
+import Accordion from "@/widgets/Accordion/Accordion";
 
 
 
@@ -72,7 +72,7 @@ export default function Home() {
       <Section
         title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line"/>}
       >
-        {/*<YandexMap/>*/}
+        <Accordion items={questions}/>
       </Section>
       <Section
         title={<SectionTitle highlight="Реализованные" text="проекты"/>}

@@ -67,8 +67,8 @@ export const Header = () => {
         <Image
           src={"images/logo.png"}
           alt="Good Line"
-          width={244}
-          height={45}
+          width={190}
+          height={35}
           sizes="100vw"
           style={{objectFit: 'contain'}}/>
         </div>
@@ -98,14 +98,13 @@ export const Header = () => {
 
         {/* КОНТАКТЫ */}
         <div className={styles.contacts}>
-          <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-          <a href="mailto:info@mail.ru">info@mail.ru</a>
+          <a href="tel:+74993026143">+7 (499) 302-61-43</a>
 
           <Button
             variant="default"
             heightClass="small"
             ariaLabel="Получить консультацию"
-            className={styles.contacts__button}
+            className={styles.callback}
           >Заказать звонок
           </Button>
         </div>

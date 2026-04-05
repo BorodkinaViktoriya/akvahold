@@ -65,7 +65,7 @@ interface AccordionProps {
             >
               <div className={styles.inner}>
                 {item.answer.map((text, i) => (
-                  <p key={i} >
+                  <p key={i} className={styles.text} >
                     {text}
                   </p>
                 ))}

@@ -19,7 +19,7 @@ import Reviews from "@/widgets/Reviews/Reviews";
 import Cta from "@/widgets/CTA/Cta";
 import {details, cards, questions} from "@/lib/constants/kupeli_main";
 import {feedbacks} from "@/lib/constants/kupeli_main";
-import {buisness} from "@/lib/constants/kupeli_main";
+import {straight} from "@/lib/constants/kupeli_main";
 import Accordion from "@/widgets/Accordion/Accordion";
 
 
@@ -28,13 +28,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero/>
-      <Section
-        id="models"
-        title={<SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха"/>}
-        variant={"brown"}
-      >
-        <SliderModels/>
-      </Section>
       <Section
         title={<SectionTitle highlight="Когда дом" text="становится местом силы"/>}
         /*title={<SectionTitle highlight="SPA-зона" text="в любое время года"/>}*/
@@ -46,23 +39,43 @@ export default function Home() {
       >
         <SliderLeft details={details}/>
       </Section>
+      <Section
+        id="models"
+        title={<SectionTitle highlight="Выберите купель" text="для вашего идеального отдыха"/>}
+        variant={"brown"}
+      >
+        <SliderModels/>
+      </Section>
+      <Section
+        /* title={<SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов"/>}*/
+        title={<SectionTitle highlight="3 шага" text="к своему месту силы"/>}
+      >
+        {/*<CardsRow cards={buisness}/>*/}
+        <CardsRow cards={straight}/>
+      </Section>
+      <Section
+        variant={"gray"}
+        title={<SectionTitle highlight="Когда всё продумано" text="для спокойного отдыха"/>}
+      >
+        <SliderTwoTitles/> {/*// TODO переделать этот кусок или убрать секцию вторую или заголовок*/}
+      </Section>
+      <ImageTextChess/>
+
       {/*Секция-слайдер не стандарт*/}
-      <SliderTwoTitles/>
+
+
+
      {/* <Section
         title={<SectionTitle highlight="Широкие возможности" text="оснащения купелей"/>}
       >
         <CardsSlider cards={cards}/>
       </Section>*/}
       <Section
-        title={<SectionTitle highlight="Комфорт," text=" к которому хочется возвращаться"/>}
+        title={<SectionTitle highlight="Комфорт" text="каждого купания"/>}
       >
         <CardsSlider cards={cards}/>
       </Section>
-      <Section
-        title={<SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов"/>}
-      >
-        <CardsRow cards={buisness}/>
-      </Section>
+
 
       <Section
         title={<SectionTitle highlight="Нам доверяют" text=" "/>}

@@ -37,8 +37,8 @@ export default function CardsRow({cards}: CardsRowProps) {
         variant="default"
         heightClass="big"
         className={styles.row__button}
-        ariaLabel="Узнать подробнее"
-      >Узнать подробнее
+        ariaLabel="Подобрать купель"
+      >Подобрать купель
       </Button>
     </div>
   )

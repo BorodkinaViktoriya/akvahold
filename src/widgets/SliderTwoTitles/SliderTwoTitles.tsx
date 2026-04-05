@@ -94,8 +94,8 @@ export default function SliderTwoTitles() {
         className={styles.slide}
         aria-live="polite" aria-atomic="true"
       >
-        <p className={styles.description}>конструктивное превосходство</p>
-        <h2 className={styles.title}>{currentSlide.title}</h2>
+        <p className={styles.description}>{currentSlide.title} </p>
+       {/* <h2 className={styles.title}>конструктивное превосходство</h2>*/}
 
         <div ref={navRef} className={styles.navigation}>
           {TubFeatures.map((slide, index) => (

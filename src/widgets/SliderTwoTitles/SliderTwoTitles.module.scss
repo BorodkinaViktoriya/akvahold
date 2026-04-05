@@ -12,7 +12,7 @@
   position: relative;
   min-height: 60vh;
   width: 100%;
-  padding: 3.2vw 0 3.2vw 4vw;
+  padding: 0 0 3.2vw 4vw;
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 1vw 4vw;
@@ -237,7 +237,6 @@ grid-area: info;
     grid-row-gap: 30px;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "description"
       "nav"
       "image"
       "info";

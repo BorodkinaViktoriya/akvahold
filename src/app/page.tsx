@@ -59,6 +59,11 @@ export default function Home() {
       >
         <SliderTwoTitles/> {/*// TODO переделать этот кусок или убрать секцию вторую или заголовок*/}
       </Section>
+      <Section
+        title={<SectionTitle highlight="Комфорт" text="каждого купания"/>}
+      >
+        <CardsSlider cards={cards}/>
+      </Section>
       <ImageTextChess/>
 
       {/*Секция-слайдер не стандарт*/}
@@ -70,11 +75,7 @@ export default function Home() {
       >
         <CardsSlider cards={cards}/>
       </Section>*/}
-      <Section
-        title={<SectionTitle highlight="Комфорт" text="каждого купания"/>}
-      >
-        <CardsSlider cards={cards}/>
-      </Section>
+
 
 
       <Section

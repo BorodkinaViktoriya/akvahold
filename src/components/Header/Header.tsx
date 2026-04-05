@@ -61,17 +61,7 @@ export const Header = () => {
     <header className={styles.header} ref={menuRef}>
       <div className={styles.container}>
 
-        {/* ЛОГО */}
 
-        <div >
-        <Image
-          src={"images/logo.png"}
-          alt="Good Line"
-          width={190}
-          height={35}
-          sizes="100vw"
-          style={{objectFit: 'contain'}}/>
-        </div>
 
         {/* НАВИГАЦИЯ */}
         <nav
@@ -108,7 +98,17 @@ export const Header = () => {
           >Заказать звонок
           </Button>
         </div>
+        {/* ЛОГО */}
 
+        <div >
+          <Image
+            src={"images/logo.png"}
+            alt="Good Line"
+            width={190}
+            height={35}
+            sizes="100vw"
+            style={{objectFit: 'contain'}}/>
+        </div>
         {/* БУРГЕР */}
         <button
           className={styles.burger}

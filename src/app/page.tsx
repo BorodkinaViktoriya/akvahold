@@ -79,7 +79,7 @@ export default function Home() {
 
 
       <Section
-        title={<SectionTitle highlight="Нам доверяют" text=" "/>}
+        title={<SectionTitle highlight="Выбор тех," text="кто понимает"/>}
       >
         <Reviews reviews={feedbacks}/>
       </Section>

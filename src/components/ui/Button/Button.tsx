@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'default' | 'light' | 'hero' ;
-  heightClass?: 'small' | 'big' ;
+  heightClass?: 'small' | 'big' | 'xs';
   className?: string;
   onClick?: () => void;
   ariaLabel?: string;

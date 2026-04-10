@@ -16,7 +16,7 @@ interface FeedbacksProps {
 
 export default function Reviews({ reviews }: FeedbacksProps) {
   return (
-    <section className={styles.section} >
+    <div className={styles.section}>
       <ul
         className={styles.row} >
         { reviews.map((review , index) => (
@@ -48,6 +48,6 @@ export default function Reviews({ reviews }: FeedbacksProps) {
         ))
         }
       </ul>
-    </section>
+    </div>
   )
 }

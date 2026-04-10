@@ -141,7 +141,6 @@ export const TubModels: models[] = [
 
 import {useState, useEffect, useRef} from "react";
 import styles from "./SliderModels.module.scss";
-import {allowedDisplayValues} from "next/dist/compiled/@next/font/dist/constants";
 import Button from "@/components/ui/Button/Button";
 /*import {slides} from "@/lib/constants/kupeli_main";*/
 

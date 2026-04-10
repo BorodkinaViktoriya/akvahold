@@ -1,16 +1,22 @@
 import Image from "next/image"
 import styles from "./ImageTextChess.module.scss"
 
-import { items, FeatureItem } from "@//lib/constants/kupeli_main"
+export type ChessItem = {
+  id: number
+  image: string
+  title: string
+  alt: string
+  text: string[]
+}
 
-export const ImageTextChess = () => {
+export default function ImageTextChess ({items}: ChessItem) {
   return (
     <div className={styles.list}>
-      {items.map((item: FeatureItem, index: number) => (
+      {items.map((item, index) => (
         <article
           key={index}
           className={`${styles.featureBlock} ${
-            index % 2 === 1 ? styles.reverse : ""
+            item.id % 2 === 1 ?  "" :  styles.reverse
           }`}
         >
           <div className={styles.imageWrapper}>

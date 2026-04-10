@@ -81,6 +81,9 @@
 
 
 @media (max-width: 1142px) {
+  .section {
+    padding: 0 20px;
+  }
   .row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

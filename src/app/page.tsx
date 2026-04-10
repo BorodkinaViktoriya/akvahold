@@ -8,7 +8,7 @@ export const metadata = {
 import styles from "./page.module.css";
 import Section from "@/components/ui/Section/Section";
 import Hero from "@/widgets/Hero/Hero";
-import {ImageTextChess} from "@/widgets/ImageTextChess/ImageTextChess";
+import ImageTextChess from "@/widgets/ImageTextChess/ImageTextChess";
 import SliderLeft from "@/widgets/SliderLeft/SliderLeft";
 import YandexMap from "@/components/YandexMap/YandexMapClient";
 import SliderModels from "@/widgets/SliderModels/SliderModels";
@@ -17,7 +17,7 @@ import CardsSlider from "@/widgets/CardsSlider/CardsSlider";
 import CardsRow from "@/widgets/CardsRow/CardsRow";
 import Reviews from "@/widgets/Reviews/Reviews";
 import Cta from "@/widgets/CTA/Cta";
-import {details, cards, questions} from "@/lib/constants/kupeli_main";
+import {details, cards, questions, mestoItems, restItem} from "@/lib/constants/kupeli_main";
 import {feedbacks} from "@/lib/constants/kupeli_main";
 import {straight} from "@/lib/constants/kupeli_main";
 import Accordion from "@/widgets/Accordion/Accordion";
@@ -32,7 +32,7 @@ export default function Home() {
         title={<SectionTitle highlight="Когда дом" text="становится местом силы"/>}
         /*title={<SectionTitle highlight="SPA-зона" text="в любое время года"/>}*/
       >
-        <ImageTextChess/>
+        <ImageTextChess items={mestoItems}/>
       </Section>
       <Section
         title={<SectionTitle highlight="Good Line - качество" text="в каждой детали"/>}
@@ -47,6 +47,7 @@ export default function Home() {
         <SliderModels/>
       </Section>
       <Section
+        id="buyers"
         /* title={<SectionTitle highlight="Good Line для бизнеса" text="гостиниц, бань и SPA-комплексов"/>}*/
         title={<SectionTitle highlight="3 шага" text="к своему месту силы"/>}
       >
@@ -64,18 +65,15 @@ export default function Home() {
       >
         <CardsSlider cards={cards}/>
       </Section>
-      <ImageTextChess/>
-
-      {/*Секция-слайдер не стандарт*/}
-
-
+      <Section>
+        <ImageTextChess items={restItem}/>
+      </Section>
 
      {/* <Section
         title={<SectionTitle highlight="Широкие возможности" text="оснащения купелей"/>}
       >
         <CardsSlider cards={cards}/>
       </Section>*/}
-
 
 
       <Section
@@ -85,16 +83,15 @@ export default function Home() {
       </Section>
       <Cta/>
       <Section
-        id="faq"
-        title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line"/>}
+        title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line" id="faq"/>}
       >
         <Accordion items={questions}/>
       </Section>
-      <Section
+      {/*<Section
         title={<SectionTitle highlight="Реализованные" text="проекты"/>}
       >
         <YandexMap/>
-      </Section>
+      </Section>*/}
 
     </main>
   );

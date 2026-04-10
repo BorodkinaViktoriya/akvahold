@@ -25,7 +25,7 @@ interface AccordionProps {
   };
 
   return (
-    <div className={styles.accordion} id="faq">
+    <div className={styles.accordion}>
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
 

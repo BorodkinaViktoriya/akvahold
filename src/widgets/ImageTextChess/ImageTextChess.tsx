@@ -9,7 +9,11 @@ export type ChessItem = {
   text: string[]
 }
 
-export default function ImageTextChess ({items}: ChessItem) {
+interface ImageTextChessProps {
+  items: ChessItem[];
+}
+
+export default function ImageTextChess ({items}:  ImageTextChessProps) {
   return (
     <div className={styles.list}>
       {items.map((item, index) => (

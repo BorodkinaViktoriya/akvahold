@@ -34,7 +34,8 @@ export const Footer= () => {
         <div className={styles.contactsSection} id="contacts">
           <h4 className={styles.title} >Контакты</h4>
           <div className={styles.infoList}>
-            <p>г. Москва, ул.Шарикоподшипниковская, д.4, корп.1А (2 мин от м.Дубровка)</p>
+            <p><strong>Офис: </strong>  г. Москва, ул.Шарикоподшипниковская, д.4, корп.1А (2 мин от м.Дубровка)</p>
+            <p><strong>Производство: </strong> МО, Домодедовский р-н, промзона "Житнево", стр. 20</p>
             <p>Почта: <a href="mailto:info@akvahold.ru">info@akvahold.ru</a></p>
             <p>Телефон: <a href={`tel:${PHONE_NUMBER_CLEAN}`}>{PHONE_NUMBER}</a></p>
             {/*<p>Телефон: <a href="tel:+74954776215">+7 (495) 477-62-15</a></p>*/}
@@ -59,7 +60,10 @@ export const Footer= () => {
               <Image  src={asset("/images/yt.png")} alt="Ютуб канал" width={24} height={24} />
               <span>АКВАХОЛД</span>
             </a>
-
+            <a href="https://vkvideo.ru/@aquahold" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
+              <Image  src={asset("/images/vkv.png")} alt="ВК видео канал" width={24} height={24} />
+              <span>АКВАХОЛД</span>
+            </a>
             <a href="https://zen.yandex.ru/id/5faa92e25f35b66359cd1b08" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
               <Image  src={asset("/images/dzen.png")}  alt="Дзен канал" width={24} height={24} />
               <span>АКВАХОЛД</span>

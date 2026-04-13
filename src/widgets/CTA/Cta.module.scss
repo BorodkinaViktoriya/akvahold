@@ -69,6 +69,7 @@
     min-width: 350px;
   }
 }
+
 @media (max-width: 900px) {
   .cta {
     grid-template-columns: 1fr;
@@ -78,9 +79,11 @@
   .cta_button {
     align-self: center;
     width: 50%;
+    min-width: 200px;
   }
 
 }
+
 @media (max-width: 691px) {
 .cta_button {
   width: 100%;

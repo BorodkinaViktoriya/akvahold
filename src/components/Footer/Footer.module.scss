@@ -23,7 +23,7 @@
 }
 
 .contactsSection {
-  min-width: 220px;
+  width: 400px;
 }
 
 .copyright {
@@ -50,7 +50,7 @@
   gap: 12px;
   font-size: 14px;
   line-height: 1.5;
-  max-width: 320px;
+  max-width: 400px;
 }
 
 .infoList a {
@@ -104,8 +104,12 @@
   .socialSection {
     min-width: 180px;
   }
+
+  .contactsSection{
+     width: 35%;
+  }
   .container {
-    gap: 30px;
+    gap: 40px;
   }
 }
 
@@ -121,7 +125,9 @@
   .logoSection {
     max-width: 100%;
   }
-
+  .contactsSection{
+    width: 100%;
+  }
   .infoList {
     max-width: 100%;
     align-items: start;

@@ -83,7 +83,8 @@ export default function Home() {
       </Section>
       <Cta/>
       <Section
-        title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line" id="faq"/>}
+        id="faq"
+        title={<SectionTitle highlight="Часто задаваемые вопросы" text="о купели Good Line"/>}
       >
         <Accordion items={questions}/>
       </Section>

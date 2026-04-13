@@ -1,17 +1,21 @@
 "use client";
+import React from "react";
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import clsx from "clsx";
-import styles from "./Header.module.scss";
+import Image from 'next/image';
+import {asset} from "@/lib/asset"
+
+import {useEffect, useRef, useState} from 'react';
+import clsx from 'clsx';
+import styles from './Header.module.scss';
 import Button from "@/components/ui/Button/Button";
-import { PHONE_NUMBER, PHONE_NUMBER_CLEAN } from '@/lib/constants/contacts';
+import {PHONE_NUMBER, PHONE_NUMBER_CLEAN} from '@/lib/constants/contacts';
+
 
 const menuItems = [
-  { label: "Модели", href: "#models" },
-  { label: "Покупателям", href: "#buyers" },
-  { label: "Контакты", href: "#contacts" },
-  { label: "Вопросы", href: "#faq" },
+  {label: "Модели", href: "#models"},
+  {label: "Покупателям", href: "#buyers"},
+  {label: "Контакты", href: "#contacts"},
+  {label: "Вопросы", href: "#faq"},
 ];
 
 export const Header = () => {
@@ -36,7 +40,7 @@ export const Header = () => {
     };
   }, [isOpen]);
 
-  // Active link при скролле (с throttle)
+  // Active link при скролле (с IntersectionObserver)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -70,7 +74,7 @@ export const Header = () => {
       },
       {
         // Настройки наблюдателя — самое важное!
-        rootMargin: "-40px 0px -10px 0px",   // верхний отступ 140px, нижний -100px
+        rootMargin: "-80px 0px -20px 0px",   // верхний отступ 80px, нижний -120px
         threshold: 0.1                         // 10% видимости достаточно
       }
     );
@@ -102,17 +106,6 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Лого */}
-        <div className={styles.logo}>
-          <Image
-            src="/images/logo.png"
-            alt="Good Line"
-            width={190}
-            height={35}
-            priority
-            style={{ objectFit: "contain" }}
-          />
-        </div>
 
         {/* Десктоп меню */}
         <nav className={styles.desktopNav} aria-label="Основная навигация">
@@ -138,25 +131,35 @@ export const Header = () => {
           <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
             {PHONE_NUMBER}
           </a>
-          <Button heightClass = 'xs'  className={styles.callback}>
+          <Button heightClass='xs' className={styles.callback}>
             Заказать звонок
           </Button>
         </div>
-
+        {/* Лого */}
+        <div className={styles.logo}>
+          <Image
+            src={asset("/images/logo.png")}
+            alt="Good Line"
+            width={190}
+            height={35}
+            priority
+            style={{objectFit: "contain"}}
+          />
+        </div>
         {/* Бургер */}
         <button
-          className={clsx(styles.burger, { [styles.open]: isOpen })}
+          className={clsx(styles.burger, {[styles.open]: isOpen})}
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Открыть меню"
           aria-expanded={isOpen}
         >
-          <span />
-          <span />
+          <span/>
+          <span/>
         </button>
       </div>
 
       {/* Мобильное меню */}
-      <div className={clsx(styles.mobileMenu, { [styles.open]: isOpen })}>
+      <div className={clsx(styles.mobileMenu, {[styles.open]: isOpen})}>
         <div className={styles.mobileMenuContent}>
           <nav aria-label="Мобильная навигация">
             <ul className={styles.mobileMenuList}>
@@ -177,40 +180,29 @@ export const Header = () => {
           </nav>
 
           <div className={styles.mobileContacts}>
-            <a href="tel:+74993026143" className={styles.phone}>
-              +7 (499) 302-61-43
+            <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
+              {PHONE_NUMBER}
             </a>
             <Button
-              variant="default"
-              size="sm"
+              className={styles.mobile_button}
+              heightClass="xs"
               onClick={() => setIsOpen(false)}
             >
               Заказать звонок
             </Button>
           </div>
+
+
         </div>
       </div>
     </header>
   );
 };
+
+// TODO 2 dfhbfyn
+
+
 /*
-"use client";
-import React from "react";
-
-import Image from 'next/image';
-import { asset } from "@/lib/asset"
-
-import { useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
-import styles from './Header.module.scss';
-import Button from "@/components/ui/Button/Button";
-
-const menuItems = [
-  { label: 'Модели', href: '#models' },
-  { label: 'Покупателям', href: '#buyers' },
-  { label: 'Контакты', href: '#contacts' },
-  { label: 'Вопросы', href: '#faq' }
-];
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -341,5 +333,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
-*/
+};*/

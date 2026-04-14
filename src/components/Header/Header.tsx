@@ -136,7 +136,7 @@ export const Header = () => {
           </Button>
         </div>
         {/* Лого */}
-        <div className={styles.logo}>
+        <div >
           <Image
             src={asset("/images/logo.png")}
             alt="Good Line"
@@ -159,7 +159,8 @@ export const Header = () => {
       </div>
 
       {/* Мобильное меню */}
-      <div className={clsx(styles.mobileMenu, {[styles.open]: isOpen})}>
+      <div className={clsx(styles.mobileMenu, { [styles.open]: isOpen })}>
+
         <div className={styles.mobileMenuContent}>
           <nav aria-label="Мобильная навигация">
             <ul className={styles.mobileMenuList}>
@@ -183,154 +184,12 @@ export const Header = () => {
             <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
               {PHONE_NUMBER}
             </a>
-            <Button
-              className={styles.mobile_button}
-              heightClass="xs"
-              onClick={() => setIsOpen(false)}
-            >
+            <Button heightClass="xs" onClick={() => setIsOpen(false)}>
               Заказать звонок
             </Button>
           </div>
-
-
         </div>
       </div>
     </header>
   );
 };
-
-// TODO 2 dfhbfyn
-
-
-/*
-
-export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState<string>('');
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // закрытие по клику вне
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('pointerdown', handleClickOutside);
-    return () => {
-      document.removeEventListener('pointerdown', handleClickOutside);
-    };
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  }, [isOpen]);
-
-  // 👉 active link по скроллу
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = '';
-
-      menuItems.forEach(item => {
-        const section = document.querySelector(item.href);
-
-        if (section) {
-          const rect = section.getBoundingClientRect();
-
-          if (rect.top <=150 && rect.bottom >= 150) {
-            current = item.href;
-          }
-        }
-      });
-
-      setActive(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // 👈 важно (срабатывает сразу)
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleKey);
-
-    return () => {
-      document.removeEventListener('keydown', handleKey);
-    };
-  }, []);
-
-  return (
-    <header className={styles.header} ref={menuRef}>
-      <div className={styles.container}>
-
-        <div
-          className={clsx(styles.adaptiveMenu, {
-            [styles.open]: isOpen
-          })}
-        >
-          {/!* НАВИГАЦИЯ *!/}
-          <nav aria-label="Основная навигация">
-            <ul className={styles.menu}>
-              {menuItems.map(item => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className={clsx(styles.label, {
-                      [styles.active]: active === item.href
-                    })}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          {/!* КОНТАКТЫ *!/}
-          <div className={styles.contacts}>
-            <a href="tel:+74993026143">+7 (499) 302-61-43</a>
-            <Button
-              variant="default"
-              heightClass="xs"
-              ariaLabel="Получить консультацию"
-              className={styles.callback}
-            >Заказать звонок
-            </Button>
-          </div>
-        </div>
-
-        {/!* ЛОГО *!/}
-
-        <div >
-          <Image
-            src={"images/logo.png"}
-            alt="Good Line"
-            width={190}
-            height={35}
-            sizes="100vw"
-            style={{objectFit: 'contain'}}/>
-        </div>
-        {/!* БУРГЕР *!/}
-        <button
-          className={clsx(styles.burger, {
-            [styles.open]: isOpen
-          })}
-          onClick={() => setIsOpen(prev => !prev)}
-          aria-label="Меню"
-          aria-expanded={isOpen}
-        >
-          <span />
-          <span />
-        </button>
-      </div>
-    </header>
-  );
-};*/

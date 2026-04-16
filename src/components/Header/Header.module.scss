@@ -14,8 +14,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  background: #23232366;
-  backdrop-filter: blur(25px);
+  background: #575452;
+/*  background:  #898481;*/
+  /*backdrop-filter: blur(25px);*/
 }
 
 // Десктоп меню
@@ -124,16 +125,21 @@
   left: 0;
   width: 100%;
   height: calc(100dvh - 50px);
+  background: #575452;
+ /* background:  #898481;*/
 
-  background: #23232366;
-  backdrop-filter: blur(25px);
+  backdrop-filter: none;
+ /* background: #23232366;
+  backdrop-filter: blur(25px);*/
   z-index: 30;
   pointer-events: none;
-  overflow-y: auto;
-
+ /* overflow-y: auto;*/
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
+
+  border-top: 1px solid #fff;
 
   transition:
     transform 0.45s cubic-bezier(0.65, 0.05, 0.95, 0.4),
@@ -147,12 +153,17 @@
   pointer-events: auto;
 }
 
+
 .mobileMenuContent {
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
   padding: 50px 9vw;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  height: 100%;
 }
 
 .mobileMenuList {

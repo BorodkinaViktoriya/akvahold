@@ -19,8 +19,8 @@ export const TubModels: models[] = [
     title: "SPA",
     image: "images/kupeli/models/spa.png",
     alt: "Купель Good Line SPA цвет венге",
-    price: "от 541 000 р",
-    pdf: "./docs/prises/premium.pdf",
+    price: "от 321 900 р",
+    pdf: "./docs/prises/spa.pdf",
     info: [
       {
         value: "45",
@@ -59,7 +59,7 @@ export const TubModels: models[] = [
     title: "Premium",
     image: "images/kupeli/models/premium2.png",
     alt: "Купель Good Line Premium цвет венге",
-    price: "от 550 000 р",
+    price: "от 396 200 р",
     pdf: "./docs/prises/premium.pdf",
     info: [
       {
@@ -100,8 +100,8 @@ export const TubModels: models[] = [
     title: "Electro",
     image: "images/kupeli/models/premium-e2.png",
     alt: "Купель Good Line Electro цвет венге",
-    price: "от 575 000 р",
-    pdf: "./docs/prises/premium-e.pdf",
+    price: "от 541 000 р",
+    pdf: "./docs/prises/electro.pdf",
     info: [
       {
         value: "3",

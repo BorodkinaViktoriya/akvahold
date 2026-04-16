@@ -97,20 +97,34 @@
   .hero {
     width: 100%;
     aspect-ratio: 1/1.5;
-
   }
 
 
   .img {
     object-fit: contain;
-    object-position: center bottom;
+    object-position: bottom;
   }
 
 }
 
 @media (max-width: 630px) {
   .hero {
+    aspect-ratio: unset;
     padding-left: 20px;
+    height: 100vh;
+    height: 100 svh;
+  }
+
+  .img {
+    object-fit: contain;
+    object-position: bottom;
+    width: 100%;
+    height: auto;
+  }
+
+  .imageWrapper {
+    top: auto;
+    aspect-ratio: 2/3;
   }
 
   .hero__button {

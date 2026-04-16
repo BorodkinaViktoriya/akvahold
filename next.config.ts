@@ -6,8 +6,8 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
-  basePath: isProd ? "/akvahold" : "",
-  assetPrefix: isProd ? "/akvahold/" :"",
+  basePath: isProd ? "/ulichnaya_kupel_goodline" : "",
+  assetPrefix: isProd ? "/ulichnaya_kupel_goodline/" : "",
 
   // next/image – нужно отключить оптимизацию при export
   images: {
@@ -16,3 +16,6 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+/* basePath: isProd ? "/akvahold" : "",
+ assetPrefix: isProd ? "/akvahold/" :"",*/

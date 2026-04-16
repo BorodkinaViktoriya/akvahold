@@ -40,7 +40,7 @@ export const locations: Location[] = [
     id: "vladimir",
     city: "Владимир",
     coords: [56.129, 40.406],
-    image: "/images/kupeli/datails/ls2.jpg",
+    image: "/images/kupeli/datails/ls2было.jpg",
     phone: "+7 (492) 000-00-00",
     address: "ул. Большая Московская",
     description: "Региональный офис",

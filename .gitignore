@@ -46,3 +46,6 @@ next-env.d.ts
 .vscode/
 .idea/
 .DS_Store
+
+файл
+layout.tsx

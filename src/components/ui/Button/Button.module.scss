@@ -5,17 +5,16 @@
   border: none;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
   padding: 0 20px;
 
   &.small {
-    background-color: var(--button-color);
     min-height: 50px;
 
     @media (max-width: 1024px) {
       min-height: 45px;
     }
   }
+
   &.xs {
     background-color: var(--button-color);
     min-height: 35px;
@@ -34,16 +33,20 @@
     }
   }
 
-// Варианты цветов
+  // Варианты цветов
 
-&.default {
-  background-color: var(--button-color);
-  color: var(--white);
-}
+  &.default {
+    background-color: var(--button-color);
+    color: var(--white);
+    &:disabled {
+      background-color: #fff3;
+      cursor: not-allowed;
+    }
+  }
 
-&.light {
-  background-color: #fff3;
-  color: var(--white);
-}
+  &.light {
+    background-color: #fff3;
+    color: var(--white);
+  }
 
 }

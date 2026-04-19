@@ -22,8 +22,6 @@ import {feedbacks} from "@/lib/constants/kupeli_main";
 import {straight} from "@/lib/constants/kupeli_main";
 import Accordion from "@/widgets/Accordion/Accordion";
 
-
-
 export default function Home() {
   return (
     <main className={styles.main}>

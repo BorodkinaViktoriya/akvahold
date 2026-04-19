@@ -4,20 +4,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: #23232366;
+  backdrop-filter: blur(25px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 100;
   padding: 20px;
 }
 
 .popup {
-  background: #575452;
-  border-radius: 16px;
+  background: var(--menu-back);
   padding: 40px 30px 30px;
   width: 100%;
-  max-width: 420px;
+  max-width: 600px;
   position: relative;
   color: white;
 }
@@ -31,14 +31,11 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
-  opacity: 0.7;
 
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .title {
+  text-transform: capitalize;
   text-align: center;
   font-size: 24px;
   margin-bottom: 30px;
@@ -46,26 +43,26 @@
 }
 
 .form {
+  font-family: inherit ;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 28px;
 
   input {
-    width: 100%;
     padding: 14px 16px;
     border: none;
-    border-radius: 8px;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.95);
-    color: #333;
+    background: var(--white);
+    color: var(--color-text-dark);
 
     &::placeholder {
       color: #888;
+      font-family: "Montserrat", sans-serif;
     }
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
     }
   }
 }
@@ -74,33 +71,45 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+}
 
-  input[type="checkbox"] {
-    margin-top: 3px;
-    accent-color: #ff6b00;
-  }
+.checkbox {
+  accent-color: var(--buttonColor);
+  justify-self: start;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkboxText {
+  user-select: none;
 }
 
 .submitBtn {
   margin-top: 10px;
-  padding: 16px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
-  background: #ff6b00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+}
 
-  &:hover:not(:disabled) {
-    background: #ff8533;
+@media  (max-width: 600px) {
+  .popup {
+    padding: 40px 20px;
   }
+  .submitBtn {
+    font-size: 16px;
+  }
+}
 
-  &:disabled {
-    background: #777;
-    cursor: not-allowed;
+@media  (max-width: 400px) {
+  .popup {
+    padding: 40px 15px;
+  }
+  .submitBtn {
+    font-size: 14px;
   }
 }

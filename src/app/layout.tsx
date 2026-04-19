@@ -1,8 +1,11 @@
 import type {Metadata} from "next";
 import "./globals.scss";
+import Script from "next/script";
 import {Header} from "@/components/Header/Header";
 import {Footer} from "@/components/Footer/Footer";
+import { PopupProvider } from '@/context/PopupContext';
 import type {Viewport} from 'next'
+const mangoId = process.env.NEXT_PUBLIC_MANGO_ID;
 
 export const viewport: Viewport = {
   themeColor: '#cdc5bf', // Цвет верхней полоски в мобильных браузерах
@@ -25,9 +28,13 @@ export default function RootLayout({
   return (
     <html lang="ru">
     <body>
+    <PopupProvider>
     <Header/>
     {children}
     <Footer/>
+    </PopupProvider>
+    {/* Mango Office Widget */}
+
     </body>
     </html>
   );

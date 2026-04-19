@@ -4,8 +4,10 @@ import styles from "./Hero.module.scss";
 import Image from "next/image";
 import { asset } from "@/lib/asset";
 import Button from "@/components/ui/Button/Button";
+import {usePopup} from '@/context/PopupContext';
 
 export default function Hero() {
+  const {open} = usePopup();
 
   return (
     <section className={styles.hero}>
@@ -43,6 +45,7 @@ export default function Hero() {
           heightClass="big"
           className={styles.hero__button}
           ariaLabel="Получить консультацию"
+          onClick={open}
         >Получить консультацию
         </Button>
 

@@ -14,13 +14,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  background: #575452;
+  background: var(--menu-back);
   /*  background:  #898481;*/
   /*backdrop-filter: blur(25px);*/
 }
 
 // Десктоп меню
-
 .desktopNav {
   display: block;
 }
@@ -118,11 +117,10 @@
   transition: none; /* важно! */
 }
 
-.mobileMenu:not(.open) .mobileContacts button {
-  transition: opacity 0.12s ease-out 0ms,
-  transform 0.12s ease-out 0ms;
+.mobileMenu:not(.open) .mobileContacts .mobileButton {
+  transition: opacity 0.01s ease-out 0ms,
+  transform 0.01s ease-out 0ms;
   opacity: 0;
-  transform: translateY(15px);
 }
 
 .mobileMenu {
@@ -131,23 +129,16 @@
   left: 0;
   width: 100%;
   height: calc(100dvh - 50px);
-  background: #575452;
-  /* background:  #898481;*/
-
-  backdrop-filter: none;
-  /* background: #23232366;
-   backdrop-filter: blur(25px);*/
+  background: var(--menu-back);
+   backdrop-filter: none;
   z-index: 30;
   pointer-events: none;
-  /* overflow-y: auto;*/
-  overflow: hidden;
+   overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-
   border-top: 1px solid #fff;
-
-  transition: transform 0.45s cubic-bezier(0.65, 0.05, 0.95, 0.4),
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
   opacity 0.28s ease;
 }
 
@@ -189,8 +180,9 @@
   align-items: flex-start;
 }
 
-.mobile_button {
+.mobileButton {
   font-size: 16px;
+  min-width: 200px;
 }
 
 @media (max-width: 1220px) {

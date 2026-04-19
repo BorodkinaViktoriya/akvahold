@@ -3,9 +3,11 @@
 import styles from "./Cta.module.scss";
 import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
-import { asset } from "@/lib/asset";
+import {asset} from "@/lib/asset";
+import {usePopup} from '@/context/PopupContext';
 
 export default function Cta() {
+  const {open} = usePopup();
 
   return (
     <section className={styles.cta}>
@@ -39,6 +41,7 @@ export default function Cta() {
           variant="default"
           heightClass="big"
           className={styles.cta_button}
+          onClick={open}
           ariaLabel="Оставить заявку"
         >
           Оставить заявку

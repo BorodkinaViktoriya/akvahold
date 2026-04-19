@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { asset } from "@/lib/asset";
+import {usePopup} from '@/context/PopupContext';
 
 type models = {
   id: number;
@@ -147,6 +148,7 @@ import Button from "@/components/ui/Button/Button";
 export default function SliderModels() {
   const [activeIndex, setActiveIndex] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
+  const {open} = usePopup();
 
   const goTo = (index: number) => {
     if (index < 0) index = TubModels.length - 1;
@@ -219,6 +221,7 @@ export default function SliderModels() {
           <Button
             variant="default"
             heightClass="small"
+            onClick={open}
             ariaLabel="Получить консультацию"
             className={styles.actions__button}
           >получить консультацию

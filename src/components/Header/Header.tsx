@@ -3,7 +3,7 @@ import React from "react";
 
 import Image from 'next/image';
 import {asset} from "@/lib/asset"
-
+import {usePopup} from '@/context/PopupContext';
 import {useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
@@ -21,6 +21,7 @@ const menuItems = [
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("");
+  const {open} = usePopup();
 
   // Закрытие по Escape
   useEffect(() => {
@@ -131,7 +132,7 @@ export const Header = () => {
           <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
             {PHONE_NUMBER}
           </a>
-          <Button heightClass='xs' className={styles.callback}>
+          <Button heightClass='xs' className={styles.callback} onClick={open}>
             Заказать звонок
           </Button>
         </div>
@@ -184,7 +185,12 @@ export const Header = () => {
             <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
               {PHONE_NUMBER}
             </a>
-            <Button heightClass="xs" onClick={() => setIsOpen(false)}>
+            <Button heightClass="xs" className={styles.mobileButton} onClick={() => {
+              setIsOpen(false);
+              setTimeout(() => {
+                open();
+              }, 100); // подождать 100мс пока меню начнет исчезать
+            }}>
               Заказать звонок
             </Button>
           </div>

@@ -137,7 +137,7 @@
 
 /* информация-описание внизу блока */
 .info {
-grid-area: info;
+  grid-area: info;
   max-width: 55%;
   text-align: center;
   justify-self: center;
@@ -246,6 +246,10 @@ grid-area: info;
     max-width: 300px;
   }
 
+  .description {
+    display: none;
+    margin: 0;
+  }
 
   .image_container {
     width: 100vw;

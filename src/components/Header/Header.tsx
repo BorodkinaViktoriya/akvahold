@@ -136,7 +136,7 @@ export const Header = () => {
           </Button>
         </div>
         {/* Лого */}
-        <div >
+        <div>
           <Image
             src={asset("/images/logo.png")}
             alt="Good Line"
@@ -159,7 +159,7 @@ export const Header = () => {
       </div>
 
       {/* Мобильное меню */}
-      <div className={clsx(styles.mobileMenu, { [styles.open]: isOpen })}>
+      <div className={clsx(styles.mobileMenu, {[styles.open]: isOpen})}>
 
         <div className={styles.mobileMenuContent}>
           <nav aria-label="Мобильная навигация">

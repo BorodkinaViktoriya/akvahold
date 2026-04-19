@@ -12,7 +12,7 @@ export default function Hero() {
       <picture className={styles.imageWrapper}>
         {/* Мобильная картинка для экранов <1000px */}
         <source
-          srcSet={asset("/images/kupeli/kupeli-hero-vert.jpg")}
+          srcSet={asset("/images/kupeli/kupeliHero-vert.jpg")}
           media="(max-width: 750px)"
         />
         {/* Десктопная картинка по умолчанию */}

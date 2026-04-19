@@ -111,8 +111,11 @@
   .hero {
     aspect-ratio: unset;
     padding-left: 20px;
+    padding-top: 70px;
+    /* height: calc(100vh - 50px);
+     height: calc(100svh - 50px);*/
     height: 100vh;
-    height: 100 svh;
+    height: 100 dvh;
   }
 
   .img {

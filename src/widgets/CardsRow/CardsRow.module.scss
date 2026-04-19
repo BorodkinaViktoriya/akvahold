@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   padding: 0 4vw 2.5vw;
-
 }
 
 .row {
@@ -82,6 +81,10 @@
 }
 
 @media (max-width: 691px) {
+  .section {
+    padding-bottom: 30px;
+  }
+
   .row {
     margin-bottom: 30px;
   }

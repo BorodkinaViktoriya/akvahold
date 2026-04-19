@@ -13,6 +13,7 @@
   width: 100%;
   padding-left: 4vw;
   display: grid;
+  touch-action: pan-y;
   grid-template-columns: 27% 1fr;
   grid-template-rows: auto auto auto 1fr;
   grid-template-areas:

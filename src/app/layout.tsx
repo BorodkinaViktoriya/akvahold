@@ -8,8 +8,8 @@ export const viewport: Viewport = {
   themeColor: '#cdc5bf', // Цвет верхней полоски в мобильных браузерах
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1, // Опционально: запрещает зум (хорошо для фиксированных слайдеров)
-  userScalable: false,
+ /* maximumScale: 1, // Опционально: запрещает зум (хорошо для фиксированных слайдеров)
+  userScalable: true,*/
 }
 
 export const metadata: Metadata = {

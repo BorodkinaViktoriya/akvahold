@@ -11,6 +11,14 @@
   justify-content: center;
   z-index: 100;
   padding: 20px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .popup {
@@ -20,6 +28,15 @@
   max-width: 600px;
   position: relative;
   color: white;
+  overflow-y: auto;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s ease, transform 0.35s ease;
+  max-height: 97vh;
+  .overlay.open & {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .closeBtn {
@@ -61,10 +78,13 @@
     }
 
     &:focus {
-      outline: none;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
     }
   }
+}
+
+.inputError {
+  outline:2px solid red;
 }
 
 .checkboxLabel {
@@ -88,6 +108,19 @@
 
 .checkboxText {
   user-select: none;
+}
+
+.captchaWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow: hidden;
+}
+
+#captcha-container {
+  width: 100%;
+  max-width: 538px;
 }
 
 .submitBtn {

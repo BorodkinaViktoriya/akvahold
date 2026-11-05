@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {asset} from "@/lib/asset"
 import {usePopup} from '@/context/PopupContext';
 import {useEffect, useRef, useState} from 'react';
+import { usePathname} from 'next/navigation';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
 import Button from "@/components/ui/Button/Button";
@@ -21,6 +22,8 @@ const menuItems = [
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("");
+  const pathname = usePathname();
+
   const {open} = usePopup();
 
   // Закрытие по Escape
@@ -40,6 +43,15 @@ export const Header = () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  // Обновление для манго
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      (window as any).mgo?.('number:refresh');
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   // Active link при скролле (с IntersectionObserver)
   useEffect(() => {
@@ -129,8 +141,8 @@ export const Header = () => {
         {/* Десктоп контакты */}
         <div className={styles.contacts}>
 
-          <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
-            {PHONE_NUMBER}
+          <a href="tel:+74956758999" data-mango="phone"  className={`${styles.phone} mgo-number`} >
+            +7 (495) 675-89-99
           </a>
           <Button heightClass='xs' className={styles.callback} onClick={open}>
             Заказать звонок
@@ -182,8 +194,8 @@ export const Header = () => {
           </nav>
 
           <div className={styles.mobileContacts}>
-            <a href={`tel:${PHONE_NUMBER_CLEAN}`} className={styles.phone}>
-              {PHONE_NUMBER}
+            <a href="tel:+74956758999" data-mango="phone"  className={`${styles.phone} mgo-number`}>
+              +7 (495) 675-89-99
             </a>
             <Button heightClass="xs" className={styles.mobileButton} onClick={() => {
               setIsOpen(false);

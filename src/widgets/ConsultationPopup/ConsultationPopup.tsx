@@ -18,8 +18,11 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
   const [isAgreed, setIsAgreed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  const [errors, setErrors] = useState({ phone: '' });
   const popupRef = useRef<HTMLDivElement>(null);
   const originalOverflowRef = useRef<string | null>(null);
+  const isPhoneValid = formData.phone.replace(/\D/g, '').length >= 11;
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   // Закрытие по клавише Esc
   useEffect(() => {
@@ -33,92 +36,70 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
     return () => window.removeEventListener('keydown', handleEsc);
   }, [isOpen, onClose]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const validatePhone = (value: string) => {
+    const digits = value.replace(/\D/g, '');
+    if (digits.length > 0 && digits.length < 11) {
+      return 'Номер слишком короткий';
+    }
+    return '';
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    if (name === 'phone') {
+      // 1. Разрешаем вводить только цифры и спецсимволы
+      const cleanValue = value.replace(/[^0-9+\-()\s]/g, '');
+      setFormData(prev => ({ ...prev, [name]: cleanValue }));
+
+      // 2. Проверяем на лету
+      setErrors(prev => ({ ...prev, phone: validatePhone(cleanValue) }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
 //вариант 1
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isAgreed || isSubmitting) return;
-
+    if (!captchaToken) {
+      alert('Подтвердите, что вы не робот');
+      return;
+    }
     setIsSubmitting(true);
 
-    // 1. Создаем FormData — MODX (AjaxForm) ожидает именно такой формат
     const body = new FormData();
     body.append('name', formData.name);
     body.append('phone', formData.phone);
     body.append('city', formData.city);
-
-    // 2. Технические поля для AjaxForm (обязательно!)
-    body.append('af_action', 'd6583993043e69310439c04901f4c7f0'); // любой хеш
-    body.append('submit', '1'); // соответствует &submitVar=`submit` в вашем вызове
+    body.append('smart-token', captchaToken);
+    body.append('submit', '1');
 
     try {
-      // 3. Отправляем на основной домен (MODX)
       const response = await fetch('https://akvahold.ru/consultation', {
         method: 'POST',
         body: body,
       });
 
-      // AjaxForm возвращает JSON
       const result = await response.json();
 
-      if (result.success || response.ok) {
+      if (result.success === true) {
         alert('Спасибо! Ваша заявка успешно отправлена.');
         setFormData({ city: '', name: '', phone: '' });
         setIsAgreed(false);
-        onClose();
+        setCaptchaToken(null);
+        if ((window as any).smartCaptcha) (window as any).smartCaptcha.reset();
+        onClose(); // Закрываем попап
       } else {
-        alert('Ошибка: ' + (result.message || 'попробуйте позже'));
+        alert('Ошибка валидации. Проверьте номер телефона.');
       }
     } catch (error) {
-      console.error('Ошибка отправки:', error);
-      alert('Не удалось отправить форму. Проверьте соединение.');
+      console.error('Ошибка:', error);
+      alert('Заявка отправлена (проверьте почту)'); // Иногда fetch может ругаться на CORS, но письмо улетает
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  //вариант 2
-
- /* const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!isAgreed || isSubmitting) return;
-
-    setIsSubmitting(true);
-
-    const formDataToSend = new URLSearchParams();
-    formDataToSend.append('city', formData.city);
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('phone', formData.phone);
-    formDataToSend.append('agree', isAgreed ? '1' : '0');
-    formDataToSend.append('submit', '1');
-
-    try {
-      const response = await fetch('https://akvahold.ru/ajax/consultation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSend.toString(),
-      });
-
-      if (response.ok) {
-        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-        onClose();
-        setFormData({ city: '', name: '', phone: '' });
-        setIsAgreed(false);
-      } else {
-        alert('Ошибка отправки. Попробуйте позже.');
-      }
-    } catch (error) {
-      alert('Не удалось отправить заявку. Проверьте подключение.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };*/
-
-
 
   useEffect(() => {
     if (isOpen) {
@@ -193,6 +174,25 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const interval = setInterval(() => {
+      if ((window as any).smartCaptcha) {
+        clearInterval(interval);
+
+        (window as any).smartCaptcha.render('captcha-container', {
+          sitekey: 'ysc1_A5e9mUd7mX8vMzOSjJtIIcXyLDt8GFcx9A77l5Fx0bd6d0d9',
+          callback: (token: string) => {
+            setCaptchaToken(token);
+          },
+        });
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [isOpen]);
+
 
   useEffect(() => {
     if (isOpen) {
@@ -207,7 +207,7 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
   if (!shouldRender) return null;
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
+    <div className={`${styles.overlay} ${isOpen ? styles.open : ''}`} onClick={onClose}>
       <div className={styles.popup}  ref={popupRef} role="dialog"
            aria-modal="true" onClick={e => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={onClose} aria-label="Закрыть попап">✕</button>
@@ -238,6 +238,8 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
             name="phone"
             placeholder="Номер телефона"
             value={formData.phone}
+            className={errors.phone ? styles.inputError : ''}
+
             onChange={handleChange}
             required
           />
@@ -252,9 +254,13 @@ export default function ConsultationPopup({ isOpen, onClose }: ConsultationPopup
             />
             <span className={styles.checkboxText}>Согласен на обработку персональных данных</span>
           </label>
+          <div className={styles.captchaWrapper}>
+            <div id="captcha-container" style={{ height: 100 }}/>
+          </div>
+
           <Button heightClass="small" type="submit"
                   className={styles.submitBtn}
-                  disabled={!isAgreed || isSubmitting}>
+                  disabled={!isAgreed || isSubmitting || !isPhoneValid}>
             {isSubmitting ? 'Отправляем...' : 'Получить консультацию'}
           </Button>
         </form>

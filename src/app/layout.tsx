@@ -28,13 +28,80 @@ export default function RootLayout({
   return (
     <html lang="ru">
     <body>
+    <Script
+      src="https://smartcaptcha.yandexcloud.net/captcha.js"
+      strategy="afterInteractive"
+    />
+    <Script
+      id="yandex-metrika"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) { return; }
+          }
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+          k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+
+      ym(7351804, 'init', {
+        webvisor: true,
+        clickmap: true,
+        trackLinks: true,
+         referrer: document.referrer, url: location.href,
+        accurateTrackBounce: true
+      });
+    `,
+      }}
+    />
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/7351804"
+          style={{ position: "absolute", left: "-9999px" }}
+          alt=""
+        />
+      </div>
+    </noscript>
     <PopupProvider>
     <Header/>
     {children}
     <Footer/>
     </PopupProvider>
-    {/* Mango Office Widget */}
 
+    {/* Объединенный скрипт Mango Office: Виджет + Коллтрекинг */}
+    <Script
+      id="mango-office-all"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
+              (function(w, d, u, i, o, s, p) {
+                if (d.getElementById(i)) { return; }
+                w['MangoObject'] = o;
+                w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
+                w[o].u = u; w[o].t = 1 * new Date();
+                s = d.createElement('script');
+                s.async = 1; s.id = i; s.src = u; s.charset = 'utf-8';
+                p = d.getElementsByTagName('script')[0];
+                p.parentNode.insertBefore(s, p);
+              }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
+
+              // 1. Настройка виджета (Мультиканальность)
+              mgo({ multichannel: { id: '${mangoId}' } });
+
+              // 2. Настройка подмены номеров (Коллтрекинг)
+              mgo({
+                calltracking: {
+                  id: 15860,
+                  elements: [{ "selector": ".mgo-number" }]
+                }
+              });
+            `,
+      }}
+    />
     </body>
     </html>
   );

@@ -1,11 +1,26 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
 import { asset } from "@/lib/asset";
+import { usePathname} from 'next/navigation';
 import { PHONE_NUMBER, PHONE_NUMBER_CLEAN } from '@/lib/constants/contacts';
+import {useEffect} from "react";
 
 
 export const Footer= () => {
+  const pathname = usePathname();
+
+  // Обновление для манго
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      (window as any).mgo?.('number:refresh');
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   return (
     <footer className={styles.footer} >
       <div className={styles.container}>
@@ -37,7 +52,7 @@ export const Footer= () => {
             <p><strong>Офис: </strong>  г. Москва, ул.Шарикоподшипниковская, д.4, корп.1А (2 мин от м.Дубровка)</p>
             <p><strong>Производство: </strong> МО, Домодедовский р-н, промзона "Житнево", стр. 20</p>
             <p>Почта: <a href="mailto:info@akvahold.ru">info@akvahold.ru</a></p>
-            <p>Телефон: <a href={`tel:${PHONE_NUMBER_CLEAN}`}>{PHONE_NUMBER}</a></p>
+            <p>Телефон: <a  href="tel:+74956758999" data-mango="phone"  className={`mgo-number`} >+7 (495) 675-89-99</a></p>
             {/*<p>Телефон: <a href="tel:+74954776215">+7 (495) 477-62-15</a></p>*/}
             <div className={styles.schedule}>
               <p>График работы:</p>
